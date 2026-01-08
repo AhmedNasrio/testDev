@@ -1,0 +1,502 @@
+{% comment %}
+  Hero Banner Section
+  Displays a banner with either an image or video background, customizable text, and an optional endorsement block.
+{% endcomment %}
+
+{%- liquid
+  assign section_id = 'hero-banner-' | append: section.id
+  assign background_type = section.settings.background_type
+  assign image_background = section.settings.image_background
+  assign video_background_url = section.settings.video_background_url
+  assign video_background_hosted = section.settings.video_background_hosted
+
+  assign stars_text = section.settings.stars_text
+  assign heading = section.settings.heading
+  assign subheading = section.settings.subheading
+  assign button_text = section.settings.button_text
+  assign button_text2 = section.settings.button_text2
+  assign button_link = section.settings.button_link
+  assign button_link2 = section.settings.button_link2
+  assign button_background_color = section.settings.button_background_color
+  assign button_background_color2 = section.settings.button_background_color2
+  assign button_text_color = section.settings.button_text_color
+  assign button_text_color2 = section.settings.button_text_color2
+
+  assign show_endorsement = section.settings.show_endorsement
+  assign endorsement_name = section.settings.endorsement_name
+  assign endorsement_signature_image = section.settings.endorsement_signature_image
+
+  assign content_alignment = section.settings.content_alignment
+  assign vertical_alignment = section.settings.vertical_alignment
+
+  assign feature_1_name = section.settings.feature_1_name
+  assign feature_1_icon = section.settings.feature_1_icon
+  assign feature_2_name = section.settings.feature_2_name
+  assign feature_2_icon = section.settings.feature_2_icon
+  assign feature_3_name = section.settings.feature_3_name
+  assign feature_3_icon = section.settings.feature_3_icon
+
+  assign mobile_image_background = section.settings.mobile_image_background
+  assign mobile_heading = section.settings.mobile_heading
+  assign mobile_subheading = section.settings.mobile_subheading
+  assign mobile_button_text = section.settings.mobile_button_text
+  assign mobile_button_text2 = section.settings.mobile_button_text2
+-%}
+
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+<style>
+  #{{ section_id }} {
+    --hero-overlay-color: {{ section.settings.overlay_color }};
+    --hero-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    --hero-content-alignment: {{ content_alignment }};
+    --hero-vertical-alignment: {{ vertical_alignment }};
+    --hero-button-background: {{ button_background_color }};
+    --hero-button-text: {{ button_text_color }};
+    --hero-button-background-color2: {{ button_background_color2 }};
+    --hero-button-text-color2: {{ button_text_color2 }};
+  }
+</style>
+
+<div id="{{ section_id }}" class="color-{{ section.settings.color_scheme }} hero-banner hero-banner-section">
+  <div class="hero-banner__background">
+    {% if background_type == 'video' %}
+      {% if video_background_hosted != blank %}
+        {{ video_background_hosted | video_tag: autoplay: true, loop: true, muted: true, playsinline: true }}
+      {% elsif video_background_url != blank %}
+        {% comment %}
+          Assuming YouTube or Vimeo URL - requires JS for proper embedding background
+          Basic iframe fallback - might not cover full background well
+        {% endcomment %}
+        {% if video_background_url contains 'youtube.com' or video_background_url contains 'youtu.be' %}
+          {% assign video_id = video_background_url | split: 'v=' | last | split: '&' | first | split: '/' | last %}
+          <iframe
+            src="https://www.youtube.com/embed/{{ video_id }}?autoplay=1&mute=1&loop=1&playlist={{ video_id }}&controls=0&showinfo=0&autohide=1&modestbranding=1&playsinline=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        {% elsif video_background_url contains 'vimeo.com' %}
+          {% assign video_id = video_background_url | split: '/' | last %}
+          <iframe
+            src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1&loop=1&muted=1&controls=0&background=1"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+        {% endif %}
+        {% comment %} NOTE: External video URLs (YouTube/Vimeo) often require JavaScript for true background video behavior. This is a basic iframe attempt. Hosted video is recommended. {% endcomment %}
+      {% endif %}
+    {% else %}
+      {% if image_background != blank %}
+        {{
+          image_background
+          | image_url: width: 2000
+          | image_tag: loading: 'lazy', widths: '400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000', class: 'hero-banner__background-image hero-banner__background-image--desktop'
+        }}
+      {% else %}
+        <div class="hero-banner__background-image hero-banner__background-image--desktop">{{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+      {% endif %}
+      {% if mobile_image_background != blank %}
+        {{
+          mobile_image_background
+          | image_url: width: 800
+          | image_tag: loading: 'lazy', widths: '400, 600, 800', class: 'hero-banner__background-image hero-banner__background-image--mobile'
+        }}
+      {% elsif image_background != blank %}
+        {{
+          image_background
+          | image_url: width: 800
+          | image_tag: loading: 'lazy', widths: '400, 600, 800', class: 'hero-banner__background-image hero-banner__background-image--mobile'
+        }}
+      {% endif %}
+    {% endif %}
+    <div class="hero-banner__background-overlay"></div>
+  </div>
+
+  <div class="hero-banner__content hero-banner__content--h-{{ content_alignment }} hero-banner__content--v-{{ vertical_alignment }}">
+    {% if stars_text != blank %}
+      <div class="hero-banner__stars"><span class="stars">★★★★★</span> {{ stars_text }}</div>
+    {% endif %}
+
+    {% comment %} Desktop Heading {% endcomment %}
+    {% if heading != blank %}
+      <h2 class="hero-banner__heading hero-banner__heading--desktop">{{ heading }}</h2>
+    {% endif %}
+    {% comment %} Mobile Heading {% endcomment %}
+    {% if mobile_heading != blank %}
+      <h2 class="hero-banner__heading hero-banner__heading--mobile">{{ mobile_heading }}</h2>
+    {% elsif heading != blank %}
+      <h2 class="hero-banner__heading hero-banner__heading--mobile">{{ heading }}</h2>
+    {% endif %}
+
+    {% comment %} Desktop Subheading {% endcomment %}
+    {% if subheading != blank %}
+      <p class="hero-banner__subheading hero-banner__subheading--desktop">{{ subheading | escape }}</p>
+    {% endif %}
+    {% comment %} Mobile Subheading {% endcomment %}
+    {% if mobile_subheading != blank %}
+      <p class="hero-banner__subheading hero-banner__subheading--mobile">{{ mobile_subheading | escape }}</p>
+    {% elsif subheading != blank %}
+      <p class="hero-banner__subheading hero-banner__subheading--mobile">{{ subheading | escape }}</p>
+    {% endif %}
+
+    {% comment %} Desktop Buttons {% endcomment %}
+    {% if button_text != blank and button_link != blank %}
+      <a href="{{ button_link }}" class="hero-banner__button hero-banner__button--desktop">
+        {{ button_text | escape }}
+      </a>
+    {% endif %}
+
+    {% if button_text2 != blank and button_link2 != blank %}
+      <a href="{{ button_link2 }}" class="hero-banner__button button-2 hero-banner__button--desktop">
+        {{ button_text2 | escape }}
+      </a>
+    {% endif %}
+
+    {% comment %} Mobile Buttons {% endcomment %}
+    {% if mobile_button_text != blank and button_link != blank %}
+      <a href="{{ button_link }}" class="hero-banner__button hero-banner__button--mobile">
+        {{ mobile_button_text | escape }}
+      </a>
+    {% elsif button_text != blank and button_link != blank %}
+      <a href="{{ button_link }}" class="hero-banner__button hero-banner__button--mobile">
+        {{ button_text | escape }}
+      </a>
+    {% endif %}
+
+    {% if mobile_button_text2 != blank and button_link2 != blank %}
+      <a href="{{ button_link2 }}" class="hero-banner__button button-2 hero-banner__button--mobile">
+        {{ mobile_button_text2 | escape }}
+      </a>
+    {% elsif button_text2 != blank and button_link2 != blank %}
+      <a href="{{ button_link2 }}" class="hero-banner__button button-2 hero-banner__button--mobile">
+        {{ button_text2 | escape }}
+      </a>
+    {% endif %}
+  </div>
+
+  {% if show_endorsement %}
+    <div class="hero-banner__endorsement">
+      {% if endorsement_name != blank %}
+        <div class="hero-banner__endorsement-name">{{ endorsement_name | escape }}</div>
+      {% endif %}
+      {% if endorsement_signature_image != blank %}
+        <div class="hero-banner__endorsement-signature">
+          {{
+            endorsement_signature_image
+            | image_url: width: 200
+            | image_tag: loading: 'lazy', widths: '50, 100, 150, 200'
+          }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if feature_1_name != blank or feature_2_name != blank or feature_3_name != blank %}
+    <div class="hero-banner__feature-bar">
+      <div class="hero-banner__feature-bar-container">
+        {% if feature_1_name != blank or feature_1_icon != blank %}
+          <div class="hero-banner__feature-item">
+            {% if feature_1_icon != blank %}
+              <div class="hero-banner__feature-icon">
+                {{
+                  feature_1_icon
+                  | image_url: width: 40
+                  | image_tag: loading: 'lazy', widths: '20, 30, 40', alt: feature_1_name | default: ''
+                }}
+              </div>
+            {% endif %}
+            {% if feature_1_name != blank %}
+              <div class="hero-banner__feature-name">{{ feature_1_name | escape }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if feature_2_name != blank or feature_2_icon != blank %}
+          <div class="hero-banner__feature-item">
+            {% if feature_2_icon != blank %}
+              <div class="hero-banner__feature-icon">
+                {{
+                  feature_2_icon
+                  | image_url: width: 40
+                  | image_tag: loading: 'lazy', widths: '20, 30, 40', alt: feature_2_name | default: ''
+                }}
+              </div>
+            {% endif %}
+            {% if feature_2_name != blank %}
+              <div class="hero-banner__feature-name">{{ feature_2_name | escape }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if feature_3_name != blank or feature_3_icon != blank %}
+          <div class="hero-banner__feature-item">
+            {% if feature_3_icon != blank %}
+              <div class="hero-banner__feature-icon">
+                {{
+                  feature_3_icon
+                  | image_url: width: 40
+                  | image_tag: loading: 'lazy', widths: '20, 30, 40', alt: feature_3_name | default: ''
+                }}
+              </div>
+            {% endif %}
+            {% if feature_3_name != blank %}
+              <div class="hero-banner__feature-name">{{ feature_3_name | escape }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "section-hero-banner",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Background Settings"
+    },
+    {
+      "type": "radio",
+      "id": "background_type",
+      "label": "Background Type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background",
+      "label": "Image Background"
+    },
+    {
+      "type": "video",
+      "id": "video_background_hosted",
+      "label": "Hosted Video Background"
+    },
+    {
+      "type": "url",
+      "id": "video_background_url",
+      "label": "Video URL (YouTube/Vimeo)",
+      "info": "Use hosted video above for better performance and reliability. External URLs might require custom JS for true background effect."
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Background Overlay Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Background Overlay Opacity",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Horizontal Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical Alignment",
+      "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "bottom", "label": "Bottom" }
+      ],
+      "default": "bottom"
+    },
+    {
+      "type": "text",
+      "id": "stars_text",
+      "label": "Rating Text",
+      "default": "Trusted By 30,539+ Players"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "END OF SEASON SALE",
+      "info": "Use HTML tags like <u>text</u> for underline styling"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Pro level protection for every level"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SAVE OVER 30%"
+    },
+    {
+      "type": "text",
+      "id": "button_text2",
+      "label": "Button Text2",
+      "default": "SAVE OVER 30%"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "url",
+      "id": "button_link2",
+      "label": "Button Link2"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color2",
+      "label": "Button Background Color2",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color2",
+      "label": "Button Text Color2",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Endorsement Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_endorsement",
+      "label": "Show Endorsement Block",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "endorsement_name",
+      "label": "Endorser Name",
+      "default": "TJ Oshie"
+    },
+    {
+      "type": "image_picker",
+      "id": "endorsement_signature_image",
+      "label": "Endorser Signature Image"
+    },
+    {
+      "type": "header",
+      "content": "Feature Bar Settings"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_name",
+      "label": "Feature 1 Name",
+      "default": "Most Loved Items"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_1_icon",
+      "label": "Feature 1 Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_name",
+      "label": "Feature 2 Name",
+      "default": "Customization"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_2_icon",
+      "label": "Feature 2 Icon"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_name",
+      "label": "Feature 3 Name",
+      "default": "Responsibly Sourced"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_3_icon",
+      "label": "Feature 3 Icon"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Configure separate content for mobile devices. If left empty, desktop content will be used on mobile."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image_background",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "mobile_heading",
+      "label": "Mobile Heading",
+      "info": "Use HTML tags like <u>text</u> for underline styling. Example: Shop <u>Merch</u> that build love"
+    },
+    {
+      "type": "text",
+      "id": "mobile_subheading",
+      "label": "Mobile Subheading"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_text",
+      "label": "Mobile Button 1 Text"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_text2",
+      "label": "Mobile Button 2 Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}
