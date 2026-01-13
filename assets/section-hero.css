@@ -478,66 +478,29 @@
 /* Large screens breakpoint */
 @media (min-width: 1500px) {
   .hero-banner-section {
-    height: 75vh;
-    min-height: 75vh;
-    padding: 6vh 2vh;
-  }
-
-  .hero-banner-section .hero-banner__content {
-    width: 82vh;
-    max-width: 82vh;
+    height: 60vh;
+    min-height: 60vh;
   }
 
   .stars {
-    font-size: 2.8vh;
+    font-size: 28px;
   }
 
   .hero-banner-section .hero-banner__stars {
-    font-size: 2.2vh;
+    font-size: 22px;
   }
 
   .hero-banner-section .hero-banner__heading {
-    font-size: 6vh;
-    margin: 2.4vh 0;
-  }
-
-  .hero-banner-section .hero-banner__heading u {
-    text-decoration-thickness: 0.3vh;
-    text-underline-offset: 0.6vh;
+    font-size: 60px;
   }
 
   .hero-banner-section .hero-banner__subheading {
-    font-size: 2.4vh;
-    margin-bottom: 4vh;
+    font-size: 24px;
   }
 
   .hero-banner-section .hero-banner__button {
-    font-size: 1.8vh;
-    padding: 1.8vh 0;
-    width: 32vh;
-    margin: 0 0.6vh;
-    border-radius: 3.4vh;
-  }
-
-  .hero-banner-section .hero-banner__feature-bar {
-    bottom: 3vh;
-  }
-
-  .hero-banner-section .hero-banner__feature-bar-container {
-    gap: 2.4vh;
-  }
-
-  .hero-banner-section .hero-banner__feature-item {
-    gap: 0.8vh;
-    min-width: 12vh;
-  }
-
-  .hero-banner-section .hero-banner__feature-icon {
-    width: 2.4vh;
-    height: 2.4vh;
-  }
-
-  .hero-banner-section .hero-banner__feature-name {
-    font-size: 1.6vh;
+    font-size: 18px;
+    padding: 18px 0;
+    width: 320px;
   }
 }
