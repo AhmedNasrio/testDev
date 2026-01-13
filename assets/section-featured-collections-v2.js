@@ -59,11 +59,6 @@ class FeaturedCollectionsV2 extends HTMLElement {
         pagination: {
           el: swiperEl.querySelector('.featured-collections-v2__pagination'),
           clickable: true,
-          bulletClass: 'featured-collections-v2__pagination-bullet',
-          bulletActiveClass: 'featured-collections-v2__pagination-bullet--active',
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '"></span>';
-          },
           enabled: false, // Disabled by default, enabled on mobile
         },
         breakpoints: {
