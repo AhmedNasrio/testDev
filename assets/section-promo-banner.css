@@ -6,6 +6,10 @@
   align-items: center;
   gap: 4rem;
   border-radius: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem;
 }
 
 .promo-banner__content {
@@ -29,15 +33,6 @@
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
-}
-
-.promo-banner__price {
-  margin: 0;
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: rgba(var(--color-foreground), 1);
-  margin-bottom: 1.6rem;
 }
 
 .promo-banner__button-link {
@@ -115,10 +110,6 @@
     font-size: 1.5rem;
   }
 
-  .promo-banner__price {
-    font-size: 2.8rem;
-  }
-
   .promo-banner__button {
     font-size: 1.5rem;
   }
@@ -130,6 +121,7 @@
     flex-direction: column;
     gap: 2rem;
     align-items: start;
+    padding: 2rem;
   }
 
   .promo-banner__content {
@@ -148,10 +140,6 @@
 
   .promo-banner__description {
     font-size: 1.8rem;
-  }
-
-  .promo-banner__price {
-    font-size: 2.8rem;
   }
 
   .promo-banner__button {
