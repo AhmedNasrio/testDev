@@ -15,8 +15,7 @@
       "settings": {
         "color_scheme": "scheme-3",
         "background_type": "image",
-        "image_background_left": "shopify://shop_images/ChatGPT_Image_Nov_19_2025_02_42_43_AM_1.png",
-        "image_background_right": "shopify://shop_images/ChatGPT_Image_Nov_19_2025_02_42_43_AM_2.png",
+        "image_background": "shopify://shop_images/4ca8ea939c29358f61e9d7142ce2376b44cb8964.png",
         "video_background_url": "",
         "overlay_color": "#e8e1e1",
         "overlay_opacity": 0,
