@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "hero_1": {
       "type": "hero",
@@ -23,7 +23,7 @@
         "content_alignment": "center",
         "vertical_alignment": "center",
         "stars_text": "Trusted By 1,539+ Brands",
-        "heading": "Where <u>Brand Love</u> meets cart joy.",
+        "heading": "Where <span style=\"text-decoration:underline\">Brand Love</span> meets cart joy.",
         "subheading": "Shop curated collections, trending merch, and high-impact corporate gifts that delight people and Inspire Brand Love™",
         "button_text": "SHOP COLLECTIONS",
         "button_text2": "EXPLORE KITS & BUNDLES",
@@ -42,7 +42,7 @@
         "feature_3_name": "Responsibly Sourced",
         "feature_3_icon": "shopify://shop_images/Group.png",
         "mobile_image_background": "shopify://shop_images/cee952ea1286dac2b826bfb5ac67d40c7efb002e.png",
-        "mobile_heading": "Shop <u>Merch</u> that build love",
+        "mobile_heading": "Shop <span style=\"text-decoration:underline\">Merch</span> that build love",
         "mobile_subheading": "Onboarding, events, or gifting we’ve got kits that connect people and brands.",
         "mobile_button_text": "EXPLORE KITS",
         "mobile_button_text2": "VIEW LOOKBOOKS"
@@ -93,8 +93,9 @@
       "name": "Featured Collections V2",
       "settings": {
         "color_scheme": "",
-        "heading": "Shop by Curated Collection",
+        "heading": "Shop by Curated Collection v2",
         "subheading": "Ready for some merch magic? These thoughtful collections are built to elevate every touchpoint, turning Brand Love moments into brand momentum.",
+        "mobile_subheading": "Onboarding, events, or gifting we've got kits that connect people and brands.",
         "heading_alignment": "center",
         "total_products_limit": 6,
         "show_vendor": false,
