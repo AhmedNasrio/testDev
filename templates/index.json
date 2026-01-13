@@ -118,6 +118,7 @@
       "settings": {
         "color_scheme": "",
         "product": "",
+        "custom_image": "shopify://shop_images/44149a0c727599c8c0219e9c397b6426297e37f8.png",
         "image_placement": "row",
         "image_height": 500,
         "image_fit": "cover",
