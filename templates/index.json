@@ -61,7 +61,7 @@
         "collection_card_BRp9XN": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "jeans-collection-1",
             "custom_title": "A Need for Speed",
             "tab_icon": "shopify://shop_images/Frame_1321314914_1.png"
           }
@@ -69,7 +69,7 @@
         "collection_card_jbyADA": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "sweater-collection",
             "custom_title": "Responsible Living",
             "tab_icon": "shopify://shop_images/Frame_1321314914_2.png"
           }
@@ -77,7 +77,7 @@
         "collection_card_LVn8DN": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "t-shirt-collection-1",
             "custom_title": "Perfectly Kitted",
             "tab_icon": "shopify://shop_images/Frame_1321314914_3.png"
           }
