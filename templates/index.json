@@ -15,14 +15,15 @@
       "settings": {
         "color_scheme": "scheme-3",
         "background_type": "image",
-        "image_background": "shopify://shop_images/4ca8ea939c29358f61e9d7142ce2376b44cb8964.png",
+        "image_background_left": "shopify://shop_images/ChatGPT_Image_Nov_19_2025_02_42_43_AM_1.png",
+        "image_background_right": "shopify://shop_images/ChatGPT_Image_Nov_19_2025_02_42_43_AM_2.png",
         "video_background_url": "",
         "overlay_color": "#e8e1e1",
         "overlay_opacity": 0,
         "content_alignment": "center",
         "vertical_alignment": "center",
         "stars_text": "Trusted By 1,539+ Brands",
-        "heading": "Where <u>Brand Love</u>meets cart joy.",
+        "heading": "Where <span style=\"text-decoration:underline\">Brand Love</span> meets cart joy.",
         "subheading": "Shop curated collections, trending merch, and high-impact corporate gifts that delight people and Inspire Brand Love™",
         "button_text": "SHOP COLLECTIONS",
         "button_text2": "EXPLORE KITS & BUNDLES",
@@ -40,10 +41,87 @@
         "feature_2_icon": "shopify://shop_images/Vector_1.png",
         "feature_3_name": "Responsibly Sourced",
         "feature_3_icon": "shopify://shop_images/Group.png",
-        "mobile_heading": "Shop <u>Merch</u> that build love",
+        "mobile_image_background": "shopify://shop_images/cee952ea1286dac2b826bfb5ac67d40c7efb002e.png",
+        "mobile_heading": "Shop <span style=\"text-decoration:underline\">Merch</span> that build love",
         "mobile_subheading": "Onboarding, events, or gifting we’ve got kits that connect people and brands.",
         "mobile_button_text": "EXPLORE KITS",
         "mobile_button_text2": "VIEW LOOKBOOKS"
+      }
+    },
+    "featured_collections_v2_example": {
+      "type": "featured-collections-v2",
+      "blocks": {
+        "collection_card_3ccame": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "custom_title": "Social Wellness",
+            "tab_icon": "shopify://shop_images/Frame_1321314914.png"
+          }
+        },
+        "collection_card_BRp9XN": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "custom_title": "A Need for Speed",
+            "tab_icon": "shopify://shop_images/Frame_1321314914_1.png"
+          }
+        },
+        "collection_card_jbyADA": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "custom_title": "Responsible Living",
+            "tab_icon": "shopify://shop_images/Frame_1321314914_2.png"
+          }
+        },
+        "collection_card_LVn8DN": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "custom_title": "Perfectly Kitted",
+            "tab_icon": "shopify://shop_images/Frame_1321314914_3.png"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_3ccame",
+        "collection_card_BRp9XN",
+        "collection_card_jbyADA",
+        "collection_card_LVn8DN"
+      ],
+      "name": "Featured Collections V2",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Shop by Curated Collection",
+        "subheading": "Ready for some merch magic? These thoughtful collections are built to elevate every touchpoint, turning Brand Love moments into brand momentum.",
+        "heading_alignment": "center",
+        "total_products_limit": 6,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_swatches": true,
+        "swatch_type": "color",
+        "swatch_trigger": "Color",
+        "product_grid_gap": 16,
+        "products_on_desktop": 4,
+        "products_on_mobile": 2,
+        "padding_top": 80,
+        "padding_bottom": 60
+      }
+    },
+    "promo_banner_ykRMai": {
+      "type": "promo-banner",
+      "name": "Promo Banner",
+      "settings": {
+        "color_scheme": "",
+        "product": "",
+        "image_placement": "row",
+        "image_height": 500,
+        "image_fit": "cover",
+        "image_position": "center",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "hero_v2_pVryft": {
@@ -141,71 +219,6 @@
         "style": "style2",
         "grid_gap": 25,
         "hide_shop_now": true
-      }
-    },
-    "featured_collections_v2_example": {
-      "type": "featured-collections-v2",
-      "blocks": {
-        "collection_card_3ccame": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": "T-Shirts"
-          }
-        },
-        "collection_card_BRp9XN": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": "Shorts"
-          }
-        },
-        "collection_card_jbyADA": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": "Hats"
-          }
-        },
-        "collection_card_LVn8DN": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": "Jackets"
-          }
-        },
-        "collection_card_nCgcp7": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": "Accessories"
-          }
-        }
-      },
-      "block_order": [
-        "collection_card_3ccame",
-        "collection_card_BRp9XN",
-        "collection_card_jbyADA",
-        "collection_card_LVn8DN",
-        "collection_card_nCgcp7"
-      ],
-      "name": "Featured Collections V2",
-      "settings": {
-        "color_scheme": "",
-        "heading": "Best Sellers",
-        "heading_alignment": "center",
-        "total_products_limit": 6,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "enable_swatches": true,
-        "swatch_type": "color",
-        "swatch_trigger": "Color",
-        "product_grid_gap": 16,
-        "products_on_desktop": 4,
-        "products_on_mobile": 2,
-        "padding_top": 80,
-        "padding_bottom": 60
       }
     },
     "featured_products_example": {
@@ -739,9 +752,10 @@
   },
   "order": [
     "hero_1",
+    "featured_collections_v2_example",
+    "promo_banner_ykRMai",
     "hero_v2_pVryft",
     "featured_collections_hhETJ9",
-    "featured_collections_v2_example",
     "featured_products_example",
     "selling_points_example",
     "selling_points_v2_6NgzaK",

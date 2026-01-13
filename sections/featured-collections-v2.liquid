@@ -29,19 +29,23 @@
 
 {%- liquid
   assign heading = section.settings.heading
+  assign subheading = section.settings.subheading
+  assign mobile_subheading = section.settings.mobile_subheading
   assign collections_to_show = section.blocks.size
   assign heading_alignment = section.settings.heading_alignment
   assign product_grid_gap = section.settings.product_grid_gap
   assign products_on_desktop = section.settings.products_on_desktop
   assign products_on_mobile = section.settings.products_on_mobile
   assign total_products_limit = section.settings.total_products_limit
+  assign shop_all_button_text = section.settings.shop_all_button_text
+  assign shop_all_button_url = section.settings.shop_all_button_url
 -%}
 
 {%- if collections_to_show > 0 -%}
   <featured-collections-v2
     data-section-id="{{ section.id }}"
     class="color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding"
-  >
+  > 
     <div class="page-width featured-collections-v2__content">
       <div
         class="featured-collections-v2__header"
@@ -49,6 +53,14 @@
       >
         {%- if heading != blank -%}
           <h2 class="featured-collections-v2__heading">{{ heading | escape }}</h2>
+        {%- endif -%}
+
+        {%- if subheading != blank -%}
+          <div class="featured-collections-v2__subheading featured-collections-v2__subheading--desktop">{{ subheading }}</div>
+        {%- endif -%}
+
+        {%- if mobile_subheading != blank -%}
+          <div class="featured-collections-v2__subheading featured-collections-v2__subheading--mobile">{{ mobile_subheading }}</div>
         {%- endif -%}
 
         <div class="featured-collections-v2__tabs">
@@ -64,7 +76,16 @@
               {% endif %}
             >
             <label class="featured-collections-v2__tab-label" for="tab-{{ block.id }}">
-              {{- block.settings.custom_title -}}
+              {% if block.settings.tab_icon != blank %}
+                <span class="featured-collections-v2__tab-icon">
+                  {{
+                    block.settings.tab_icon
+                    | image_url: width: 40
+                    | image_tag: loading: 'lazy', widths: '20, 30, 40', alt: block.settings.custom_title | default: ''
+                  }}
+                </span>
+              {% endif %}
+              <span class="featured-collections-v2__tab-text">{{- block.settings.custom_title -}}</span>
             </label>
           {% endfor %}
         </div>
@@ -83,10 +104,10 @@
           >
             <div class="featured-collections-v2__swiper-arrows">
               <div class="swiper-button-prev featured-collections-v2__swiper-prev">
-                {{ 'icon-arrow-prev.svg' | inline_asset_content }}
+                {{ 'prev-arrow.svg' | inline_asset_content }}
               </div>
               <div class="swiper-button-next featured-collections-v2__swiper-next">
-                {{ 'icon-arrow-next.svg' | inline_asset_content }}
+                {{ 'next-arrow.svg' | inline_asset_content }}
               </div>
             </div>
             <div data-product-grid class="swiper-wrapper">
@@ -131,7 +152,7 @@
                           </a>
                         </h3>
                         <div class="placeholder-card__price">
-                          <span class="price-item price-item--regular"> $19.99 </span>
+                          <span class="price-item price-item--regular"><span class="placeholder-card__price-text">Starting from</span> $19.99 </span>
                         </div>
                       </div>
                     </div>
@@ -139,9 +160,18 @@
                 {%- endfor -%}
               {%- endif -%}
             </div>
+            {%- comment -%} Pagination Dots {%- endcomment -%}
+            <div class="featured-collections-v2__pagination"></div>
           </div>
         {% endfor %}
       </div>
+      {%- if shop_all_button_text != blank and shop_all_button_url != blank -%}
+        <div class="featured-collections-v2__shop-all-wrapper">
+          <a href="{{ shop_all_button_url }}" class="featured-collections-v2__shop-all-button">
+            {{ shop_all_button_text | escape }}
+          </a>
+        </div>
+      {%- endif -%}
     </div>
   </featured-collections-v2>
 {%- endif -%}
@@ -163,6 +193,18 @@
       "id": "heading",
       "label": "Heading",
       "default": "Find the perfect fit for your game"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Ready for some merch magic? These thoughtful collections are built to elevate every touchpoint, turning Brand Love moments into brand momentum."
+    },
+    {
+      "type": "text",
+      "id": "mobile_subheading",
+      "label": "Mobile Subheading",
+      "default": "Onboarding, events, or gifting we've got kits that connect people and brands."
     },
     {
       "type": "select",
@@ -292,6 +334,21 @@
     },
     {
       "type": "header",
+      "content": "Shop All Button"
+    },
+    {
+      "type": "text",
+      "id": "shop_all_button_text",
+      "label": "Button Text",
+      "default": "SHOP ALL"
+    },
+    {
+      "type": "url",
+      "id": "shop_all_button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
       "content": "Spacing Settings"
     },
     {
@@ -337,6 +394,12 @@
           "id": "custom_title",
           "label": "Custom Title (optional)",
           "info": "Overrides the collection title if set."
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_icon",
+          "label": "Tab Icon",
+          "info": "Icon displayed on the left side of the tab label"
         }
       ]
     }

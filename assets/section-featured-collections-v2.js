@@ -45,9 +45,10 @@ class FeaturedCollectionsV2 extends HTMLElement {
       const productsOnDesktop = parseInt(swiperEl.dataset.productsOnDesktop);
       const productsOnMobile = parseInt(swiperEl.dataset.productsOnMobile);
       const swiperInstance = new Swiper(swiperEl, {
-        slidesPerView: 1.8,
+        slidesPerView: 'auto',
         spaceBetween: productGridGap,
         autoHeight: true,
+        centeredSlides: false,
         // IMPORTANT: These two lines allow Swiper to work when un-hidden
         observer: true,
         observeParents: true,
@@ -55,9 +56,31 @@ class FeaturedCollectionsV2 extends HTMLElement {
           nextEl: swiperEl.querySelector('.featured-collections-v2__swiper-next'),
           prevEl: swiperEl.querySelector('.featured-collections-v2__swiper-prev'),
         },
+        pagination: {
+          el: swiperEl.querySelector('.featured-collections-v2__pagination'),
+          clickable: true,
+          bulletClass: 'featured-collections-v2__pagination-bullet',
+          bulletActiveClass: 'featured-collections-v2__pagination-bullet--active',
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
+          enabled: false, // Disabled by default, enabled on mobile
+        },
         breakpoints: {
-          750: { slidesPerView: productsOnMobile, centeredSlides: false },
-          990: { slidesPerView: productsOnDesktop, centeredSlides: false },
+          750: { 
+            slidesPerView: 'auto', 
+            centeredSlides: false,
+            pagination: {
+              enabled: true,
+            }
+          },
+          990: { 
+            slidesPerView: productsOnDesktop, 
+            centeredSlides: false,
+            pagination: {
+              enabled: false,
+            }
+          },
         },
         loop: false,
         watchOverflow: true,
