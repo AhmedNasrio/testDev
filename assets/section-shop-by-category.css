@@ -122,7 +122,9 @@ shop-by-category {
 /* Desktop (750px+) - Layout */
 @media screen and (min-width: 750px) {
   .promo-banner__content {
+    font-family: 'Montserrat';
     max-width: 50%;
+    letter-spacing: 0;
   }
 
   .promo-banner__image-wrapper {
