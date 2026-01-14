@@ -12,6 +12,7 @@
   background-repeat: no-repeat;
   /* padding: 4rem; */
   background-color: #F6F1ED;
+  background-image: var(--promo-banner-bg-desktop);
 }
 
 .promo-banner__content {
@@ -92,7 +93,7 @@
   height: 100%;
   object-fit: var(--promo-banner-image-fit);
   display: block;
-  object-position: var(--promo-banner-image-position);
+  object-position: left;
 }
 
 /* Desktop (750px+) - Layout */
@@ -129,19 +130,28 @@
 @media screen and (max-width: 750px) {
   .promo-banner__container {
     flex-direction: column;
-    gap: 2rem;
-    align-items: start;
-    padding: 2rem;
+    /* gap: 2rem; */
+    align-items: center;
+    /* padding: 2rem; */
+    background-image: var(--promo-banner-bg-mobile, var(--promo-banner-bg-desktop));
   }
 
   .promo-banner__content {
+    flex:unset;
+    display: block;
     max-width: 100%;
     order: 1;
+    padding: 0;
+    text-align: center;
+    padding-top: 50px;
   }
 
   .promo-banner__image-wrapper {
     max-width: 100%;
     order: 2;
+  }
+  .promo-banner__image{
+    object-position: var(--promo-banner-image-position);
   }
 
   .promo-banner__title {
@@ -149,12 +159,23 @@
   }
 
   .promo-banner__description {
-    font-size: 1.8rem;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-size: 16px;
+    margin: 12px 0;
+    padding: 0 20px;
+    text-wrap: unset;
   }
 
   .promo-banner__button {
-    width: 100%;
+    /* width: 100%;
     font-size: 1.4rem;
-    padding: 1.4rem 2.4rem;
+    padding: 1.4rem 2.4rem; */
+    width: 245px;
+    height: 48px;
+    padding: 16px 28px;
+    letter-spacing: 0.7px;
+    font-size: 16px;
+    align-items: center;
   }
 }

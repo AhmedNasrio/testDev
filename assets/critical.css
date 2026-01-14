@@ -313,9 +313,9 @@ splash-screen[data-hidden='true'],
     grid-column: auto;
   }
   
-  .page-width {
+  /* .page-width {
     padding: 0 1rem;
-  }
+  } */
 
   .small-hide {
     display: none !important;

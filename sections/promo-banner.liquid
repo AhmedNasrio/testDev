@@ -28,6 +28,7 @@
   assign button_background_color = section.settings.button_background_color
   assign button_text_color = section.settings.button_text_color
   assign background_image = section.settings.background_image
+  assign mobile_background_image = section.settings.mobile_background_image
   
   assign heading = section.settings.heading
   assign subheading = section.settings.subheading
@@ -45,14 +46,12 @@
     --promo-banner-image-position: {{ image_position }};
     --promo-banner-button-color: {{ button_background_color }};
     --promo-banner-button-text-color: {{ button_text_color }};
+    {% if background_image != blank %}--promo-banner-bg-desktop: url('{{ background_image | image_url: width: 1920 }}');{% endif %}
+    {% if mobile_background_image != blank %}--promo-banner-bg-mobile: url('{{ mobile_background_image | image_url: width: 1920 }}');{% endif %}
   "
 >
   <div class="page-width">
-    <div class="promo-banner__container" 
-      {% if background_image != blank %}
-        style="background-image: url('{{ background_image | image_url: width: 1920 }}');"
-      {% endif %}
-    >
+    <div class="promo-banner__container">
       <div class="promo-banner__content">
         {%- if heading != blank -%}
           <h3 class="promo-banner__title">{{ heading | escape }}</h3>
@@ -144,8 +143,14 @@
     {
       "type": "image_picker",
       "id": "background_image",
-      "label": "Background Image",
-      "info": "Optional: Add a background image to the promo banner container"
+      "label": "Background Image (Desktop)",
+      "info": "Optional: Add a background image to the promo banner container for desktop screens"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "Background Image (Mobile)",
+      "info": "Optional: Add a background image to the promo banner container for mobile screens"
     },
     {
       "type": "header",
