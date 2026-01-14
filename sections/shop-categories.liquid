@@ -15,11 +15,21 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  #shopify-section-{{ section.id }} .shop-categories__heading {
+    --heading-highlight-color: {{ section.settings.heading_highlight_color }};
+  }
 {%- endstyle -%}
 
 <div class="shop-categories color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <shop-categories data-section-id="{{ section.id }}">
     <div class="page-width">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="shop-categories__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+      
       <div
         id="shop-categories-{{ section.id }}"
         class="shop-categories__slider swiper"
@@ -77,6 +87,10 @@
                       <h3 class="shop-categories__title">
                         {{ collection_title | escape }}
                       </h3>
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="16" fill="white"/>
+                        <path d="M23.5133 16.4421L17.768 22.1873C17.6508 22.3045 17.4918 22.3704 17.3261 22.3704C17.1603 22.3704 17.0013 22.3045 16.8841 22.1873C16.7669 22.0701 16.7011 21.9111 16.7011 21.7454C16.7011 21.5796 16.7669 21.4206 16.8841 21.3034L21.5626 16.6249L8.92918 16.6255C8.76333 16.6255 8.60427 16.5596 8.48699 16.4423C8.36971 16.325 8.30383 16.166 8.30383 16.0001C8.30383 15.8343 8.36972 15.6752 8.48699 15.5579C8.60427 15.4407 8.76333 15.3748 8.92918 15.3748L21.5626 15.3753L16.8841 10.6968C16.7669 10.5796 16.7011 10.4206 16.7011 10.2549C16.7011 10.0891 16.7669 9.93014 16.8841 9.81293C17.0013 9.69572 17.1603 9.62988 17.3261 9.62988C17.4918 9.62988 17.6508 9.69572 17.768 9.81293L23.5133 15.5582C23.6305 15.6754 23.6963 15.8344 23.6963 16.0001C23.6963 16.1659 23.6305 16.3249 23.5133 16.4421Z" fill="#86223F"/>
+                        </svg>                        
                     </div>
                   </div>
                 </a>
@@ -111,6 +125,24 @@
   "tag": "section",
   "class": "section-shop-categories",
   "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category",
+      "info": "Use <span> tags to highlight text with a different color, e.g., 'Shop by <span>Category</span>'"
+    },
+    {
+      "type": "color",
+      "id": "heading_highlight_color",
+      "label": "Heading Highlight Color",
+      "default": "#86223F",
+      "info": "Color for text wrapped in <span> tags"
+    },
     {
       "type": "header",
       "content": "Section Settings"

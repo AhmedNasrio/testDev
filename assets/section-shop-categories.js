@@ -51,7 +51,7 @@ export class ShopCategories extends HTMLElement {
           },
           749: {
             slidesPerView: 4,
-            spaceBetween: 24,
+            spaceBetween: 8,
           },
         },
         on: {

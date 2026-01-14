@@ -199,8 +199,7 @@ p:empty {
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  /* padding: 0 1.5rem; */
-  padding: 0 0;
+  padding: 0 6rem;
 }
 
 .caption-large,
@@ -313,9 +312,9 @@ splash-screen[data-hidden='true'],
     grid-column: auto;
   }
   
-  /* .page-width {
+  .page-width {
     padding: 0 1rem;
-  } */
+  }
 
   .small-hide {
     display: none !important;
