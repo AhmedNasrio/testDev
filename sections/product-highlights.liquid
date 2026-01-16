@@ -25,8 +25,6 @@
 
 {%- liquid
   assign blocks_to_show = section.blocks.size
-  assign title = section.settings.title
-  assign image = section.settings.image
 -%}
 
 <div class="color-{{ section.settings.color_scheme }} product-highlights section-{{ section.id }}-padding">
@@ -37,106 +35,98 @@
       </h2>
     {%- endif -%}
 
-    <div class="product-highlights__container">
-      <div class="product-highlights__content">
-        <div class="product-highlights__title-icon">
-          <svg width="102" height="26" viewBox="0 0 102 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_268_780)">
-            <path d="M32.5908 20.3772L33.8632 17.4102C35.2382 18.4404 37.0647 18.9762 38.8708 18.9762C40.2048 18.9762 41.0463 18.461 41.0463 17.6782C41.0257 15.4942 33.0628 17.2042 33.0012 11.7236C32.9807 8.9422 35.4436 6.7994 38.9324 6.7994C41.0052 6.7994 43.0781 7.3144 44.5557 8.4888L43.3654 11.5176C42.0109 10.6522 40.3281 10.0342 38.7272 10.0342C37.6394 10.0342 36.9212 10.5492 36.9212 11.2086C36.9418 13.3514 44.9663 12.177 45.0484 17.4102C45.0484 20.2536 42.6472 22.2522 39.1993 22.2522C36.6748 22.2522 34.3557 21.6546 32.5908 20.3772ZM81.4153 16.3388L84.9248 18.2962C83.6113 20.6656 81.1076 22.2522 78.2137 22.2522C73.9654 22.2522 70.5175 18.7908 70.5175 14.5258C70.5175 10.2608 73.9654 6.7994 78.2137 6.7994C81.087 6.7994 83.6113 8.4064 84.9248 10.7554L81.4153 12.7126C80.779 11.6 79.5887 10.8378 78.2137 10.8378C76.1819 10.8378 74.5401 12.486 74.5401 14.5258C74.5401 16.5656 76.1819 18.2138 78.2137 18.2138C79.5887 18.2138 80.779 17.4514 81.4151 16.3388M46.8132 0.391602H51.2052V21.9636H46.8132V0.391602ZM86.6486 0.391602H91.0406V13.0628L96.0071 7.1084H101.384L95.2479 14.2784L101.877 21.9636H96.2536L91.0406 15.4942V21.9636H86.6486V0.391602ZM64.258 16.3802V12.7332C63.6217 11.6618 62.3083 10.8378 60.8307 10.8378C58.7986 10.8378 57.1571 12.486 57.1571 14.5258C57.1571 16.5656 58.7986 18.2138 60.8307 18.2138C62.3083 18.2138 63.6217 17.431 64.258 16.3802ZM64.258 7.1084H68.65V21.943H64.258V20.1918C63.5396 21.4074 61.7541 22.2522 59.8866 22.2522C56.0281 22.2522 52.9908 18.7908 52.9908 14.5052C52.9908 10.2196 56.0281 6.7994 59.8866 6.7994C61.7541 6.7994 63.5396 7.6442 64.258 8.8598V7.1084Z" fill="black"/>
-            <path d="M5.43866 16.3592C5.43866 17.8632 4.22781 19.079 2.72949 19.079C2.37363 19.0794 2.02119 19.0093 1.69236 18.8727C1.36352 18.7361 1.06474 18.5358 0.81312 18.2832C0.561498 18.0306 0.361973 17.7306 0.225967 17.4005C0.0899602 17.0703 0.0201424 16.7165 0.0205093 16.3592C0.0205093 14.8552 1.23136 13.6396 2.72949 13.6396H5.43866V16.3592ZM6.79315 16.3592C6.79315 14.8552 8.004 13.6396 9.50213 13.6396C11.0003 13.6396 12.2113 14.8552 12.2113 16.3592V23.1584C12.2113 24.6624 11.0005 25.8783 9.50213 25.8783C9.14628 25.8786 8.79387 25.8084 8.46506 25.6719C8.13625 25.5353 7.83749 25.3349 7.58589 25.0823C7.33429 24.8297 7.13478 24.5297 6.99879 24.1996C6.86279 23.8695 6.79298 23.5157 6.79335 23.1584L6.79315 16.3592Z" fill="#E01E5A"/>
-            <path d="M9.50214 5.4394C9.14629 5.43972 8.79388 5.36958 8.46507 5.233C8.13626 5.09643 7.8375 4.89609 7.5859 4.64347C7.3343 4.39084 7.13479 4.09089 6.9988 3.76077C6.86281 3.43064 6.79299 3.07684 6.79336 2.7196C6.79316 1.2156 8.00401 0 9.50214 0C11.0003 0 12.2113 1.2156 12.2113 2.7196V5.4394H9.50214ZM9.50214 6.8198C11.0003 6.8198 12.2113 8.0354 12.2113 9.5394C12.2113 11.0434 11.0005 12.2592 9.50214 12.2592H2.70898C2.35312 12.2595 2.00068 12.1894 1.67185 12.0529C1.34301 11.9163 1.04423 11.716 0.792612 11.4633C0.54099 11.2107 0.341465 10.9107 0.205459 10.5806C0.0694524 10.2505 -0.000365456 9.89666 1.43854e-06 9.5394C1.43854e-06 8.0354 1.21085 6.82 2.70898 6.82L9.50214 6.8198Z" fill="#36C5F0"/>
-            <path d="M20.3586 9.5394C20.3586 8.0354 21.5694 6.8198 23.0676 6.8198C24.5657 6.8198 25.7767 8.0354 25.7767 9.5394C25.7767 11.0434 24.5659 12.2592 23.0676 12.2592H20.3586V9.5394ZM19.0039 9.5394C19.0039 11.0434 17.7932 12.2592 16.2949 12.2592C15.9391 12.2595 15.5866 12.1894 15.2578 12.0529C14.929 11.9163 14.6302 11.716 14.3786 11.4633C14.1269 11.2107 13.9274 10.9107 13.7914 10.5806C13.6554 10.2505 13.5856 9.89666 13.5859 9.5394V2.7196C13.5859 1.2156 14.7968 0 16.2949 0C17.793 0 19.0041 1.2156 19.0041 2.7196L19.0039 9.5394Z" fill="#2EB67D"/>
-            <path d="M16.2949 20.4388C17.793 20.4388 19.0041 21.6544 19.0041 23.1584C19.0041 24.6624 17.7932 25.8783 16.2949 25.8783C15.9391 25.8786 15.5866 25.8085 15.2578 25.6719C14.929 25.5353 14.6302 25.335 14.3786 25.0824C14.1269 24.8298 13.9274 24.5298 13.7914 24.1997C13.6554 23.8695 13.5856 23.5157 13.5859 23.1584V20.4388H16.2949ZM16.2949 19.0788C15.9391 19.0792 15.5867 19.0091 15.2578 18.8725C14.929 18.736 14.6302 18.5357 14.3786 18.2831C14.127 18.0305 13.9275 17.7305 13.7915 17.4004C13.6554 17.0703 13.5856 16.7165 13.5859 16.3592C13.5859 14.8552 14.7968 13.6396 16.2949 13.6396H23.0883C24.5864 13.6396 25.7973 14.8552 25.7973 16.3592C25.7973 17.8632 24.5864 19.079 23.0881 19.079L16.2949 19.0788Z" fill="#ECB22E"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_268_780">
-            <rect width="102" height="26" fill="white"/>
-            </clipPath>
-            </defs>
-          </svg>
-        </div>
-
-        <div class="product-highlights__testimonials-container">
-          <div class="product-highlights__testimonials-wrapper">
-            {%- for block in section.blocks -%}
-              {%- if block.type == 'testimonial' -%}
-                <div class="product-highlights__testimonial-item" id="testimonial-{{ block.id }}" {{ block.shopify_attributes }}>
-
-
-                  {%- if block.settings.description != blank -%}
-                    <p class="product-highlights__description">{{ block.settings.description | escape }}</p>
-                  {%- endif -%}
-                  {%- if block.settings.logo != blank -%}
-                    <div class="product-highlights__company-logo">
+    <div class="product-highlights__testimonials-slider">
+      <div class="product-highlights__testimonials-wrapper">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'testimonial' -%}
+            <div class="product-highlights__testimonial-slide" id="testimonial-{{ block.id }}" {{ block.shopify_attributes }}>
+              <div class="product-highlights__container">
+                <div class="product-highlights__content">
+                  {%- if block.settings.title_icon != blank -%}
+                    <div class="product-highlights__title-icon">
                       <img
-                        src="{{ block.settings.logo | image_url: width: 150 }}"
-                        alt="{{ block.settings.company_name | escape }}"
+                        src="{{ block.settings.title_icon | image_url: width: 150 }}"
+                        alt="{{ block.settings.title_icon.alt | escape }}"
                         loading="lazy"
                         width="102"
                         height="26"
                       >
                     </div>
                   {%- endif -%}
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
 
-          {%- if blocks_to_show > 1 -%}
-            <div class="product-highlights__navigation">
-              {% comment %} <div class="product-highlights__pagination">
-                {%- for block in section.blocks -%}
-                  {%- if block.type == 'testimonial' -%}
-                    <a href="#testimonial-{{ block.id }}" class="product-highlights__pagination-dot"></a>
+                  <div class="product-highlights__content-bottom">
+                    {%- if block.settings.description != blank -%}
+                      <p class="product-highlights__description">{{ block.settings.description | escape }}</p>
+                    {%- endif -%}
+
+                    {%- if block.settings.logo != blank -%}
+                      <div class="product-highlights__company-logo">
+                        <img
+                          src="{{ block.settings.logo | image_url: width: 150 }}"
+                          alt="{{ block.settings.logo.alt | escape }}"
+                          loading="lazy"
+                          width="100"
+                          height="26"
+                        >
+                      </div>
+                    {%- endif -%}
+                  </div>
+
+                  {%- if blocks_to_show > 1 -%}
+                    <div class="product-highlights__navigation">
+                      <div class="product-highlights__pagination"></div>
+                      <div class="product-highlights__arrows">
+                        <button type="button" class="product-highlights__arrow product-highlights__arrow--prev" onclick="document.querySelector('.product-highlights__testimonials-wrapper').scrollBy({left: -window.innerWidth, behavior: 'smooth'})">
+                          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" transform="matrix(-1 0 0 1 36 0)" fill="#F6F1ED"/>
+                            <path d="M20.5713 23.1431L15.4283 18.0004L20.571 12.8574" stroke="black" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </button>
+                        <button type="button" class="product-highlights__arrow product-highlights__arrow--next" onclick="document.querySelector('.product-highlights__testimonials-wrapper').scrollBy({left: window.innerWidth, behavior: 'smooth'})">
+                          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" fill="#F6F1ED"/>
+                            <path d="M15.4287 23.1431L20.5717 18.0004L15.429 12.8574" stroke="black" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
                   {%- endif -%}
-                {%- endfor -%}
-              </div> {% endcomment %}
-              
-              <div class="product-highlights__arrows">
-                <button type="button" class="product-highlights__arrow product-highlights__arrow--prev" onclick="document.querySelector('.product-highlights__testimonials-wrapper').scrollBy({left: -400, behavior: 'smooth'})">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="36" height="36" rx="18" transform="matrix(-1 0 0 1 36 0)" fill="#F6F1ED"/>
-                    <path d="M20.5713 23.1431L15.4283 18.0004L20.571 12.8574" stroke="black" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </button>
-                <button type="button" class="product-highlights__arrow product-highlights__arrow--next" onclick="document.querySelector('.product-highlights__testimonials-wrapper').scrollBy({left: 400, behavior: 'smooth'})">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="36" height="36" rx="18" fill="#F6F1ED"/>
-                    <path d="M15.4287 23.1431L20.5717 18.0004L15.429 12.8574" stroke="black" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </button>
+
+
+
+                </div>
+
+                <div class="product-highlights__media">
+                  {%- if block.settings.media_image != blank -%}
+                    <img
+                      srcset="
+                        {%- if block.settings.media_image.width >= 400 -%}{{ block.settings.media_image | image_url: width: 400 }} 400w,{%- endif -%}
+                        {%- if block.settings.media_image.width >= 600 -%}{{ block.settings.media_image | image_url: width: 600 }} 600w,{%- endif -%}
+                        {%- if block.settings.media_image.width >= 800 -%}{{ block.settings.media_image | image_url: width: 800 }} 800w,{%- endif -%}
+                        {%- if block.settings.media_image.width >= 1000 -%}{{ block.settings.media_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+                        {{ block.settings.media_image | image_url }} {{ block.settings.media_image.width }}w
+                      "
+                      src="{{ block.settings.media_image | image_url: width: 800 }}"
+                      sizes="(min-width: 750px) 50vw, 100vw"
+                      alt="{{ block.settings.media_image.alt | escape }}"
+                      loading="lazy"
+                      width="{{ block.settings.media_image.width }}"
+                      height="{{ block.settings.media_image.height }}"
+                      class="product-highlights__image"
+                    >
+                  {%- else -%}
+                    <div class="product-highlights__image-placeholder">
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    </div>
+                  {%- endif -%}
+                </div>
               </div>
             </div>
           {%- endif -%}
-        </div>
+        {%- endfor -%}
       </div>
 
-      <div class="product-highlights__media">
-        {%- if image != blank -%}
-          <img
-            srcset="
-              {%- if image.width >= 400 -%}{{ image | image_url: width: 400 }} 400w,{%- endif -%}
-              {%- if image.width >= 600 -%}{{ image | image_url: width: 600 }} 600w,{%- endif -%}
-              {%- if image.width >= 800 -%}{{ image | image_url: width: 800 }} 800w,{%- endif -%}
-              {%- if image.width >= 1000 -%}{{ image | image_url: width: 1000 }} 1000w,{%- endif -%}
-              {{ image | image_url }} {{ image.width }}w
-            "
-            src="{{ image | image_url: width: 800 }}"
-            sizes="(min-width: 750px) 50vw, 100vw"
-            alt="{{ image.alt | default: title | escape }}"
-            loading="lazy"
-            width="{{ image.width }}"
-            height="{{ image.height }}"
-            class="product-highlights__image"
-          >
-        {%- else -%}
-          <div class="product-highlights__image-placeholder">
-            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-          </div>
-        {%- endif -%}
-      </div>
-
-
+      
     </div>
   </div>
 </div>
@@ -205,27 +195,6 @@
       "unit": "px",
       "default": 40
     },
-    {
-      "type": "header",
-      "content": "Content Settings"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Product Highlights Title"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description",
-      "default": "Product Highlights description will appear here."
-    }
   ],
   "blocks": [
     {
@@ -235,15 +204,27 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "logo",
-          "label": "Company Logo",
-          "info": "Recommended: 102px x 26px"
+          "id": "title_icon",
+          "label": "Title Icon",
+          "info": "Icon that appears at the top (e.g., Slack logo). Recommended: 102px x 26px"
         },
         {
           "type": "textarea",
           "id": "description",
           "label": "Description",
           "default": "Boundless helped us create kits our team actually loves. The quality is unmatched and the process was incredibly smooth."
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Company Logo",
+          "info": "Small company logo at the bottom. Recommended: 100px x 26px"
+        },
+        {
+          "type": "image_picker",
+          "id": "media_image",
+          "label": "Media Image",
+          "info": "Product or feature image shown on the right side"
         }
       ]
     }
