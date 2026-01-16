@@ -50,7 +50,7 @@
     {% if mobile_background_image != blank %}--promo-banner-bg-mobile: url('{{ mobile_background_image | image_url: width: 1920 }}');{% endif %}
   "
 >
-  <div class="page-width">
+  <div class="page-width promo-banner__content-wrapper">
     <div class="promo-banner__container">
       <div class="promo-banner__content">
         {%- if heading != blank -%}

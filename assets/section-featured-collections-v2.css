@@ -6,14 +6,17 @@ featured-collections-v2 {
   height: auto;
 }
 
+
 .featured-collections-v2__content {
   position: relative;
   width: 92%;
+  padding: 0;
 }
 
 .featured-collections-v2__header {
   /* text-align: left; */
   /* Align header text left */
+  font-family: 'Montserrat';
   margin-bottom: 38px;
   display: flex;
   flex-direction: column;
@@ -21,6 +24,7 @@ featured-collections-v2 {
 }
 
 .featured-collections-v2__heading {
+  font-family: 'Montserrat';
   font-weight: 500;
   font-size: 48px;
   /* text-transform: uppercase; */
@@ -217,11 +221,13 @@ input[type="radio"]:checked + .featured-collections-v2__tab-label {
 
   .featured-collections-v2__content {
     width: 100%;
+    padding-left:20px;
   }
 
   .featured-collections-v2__heading {
     font-size: 32px;
     font-weight: 500;
+    padding: 0 20px;
   }
 
   /* Mobile: Hide desktop subheading, show mobile subheading */
@@ -238,6 +244,8 @@ input[type="radio"]:checked + .featured-collections-v2__tab-label {
   }
   .featured-collections-v2__subheading{
     font-size: 16px;
+    padding-right: 20px;
+    letter-spacing: 0;
   }
   .featured-collections-v2__tab-label{
     gap: 6px;
@@ -296,6 +304,7 @@ input[type="radio"]:checked + .featured-collections-v2__tab-label {
     margin-top: 32px;
     padding: 0;
     z-index: 1;
+    padding-right: 20px;
   }
 
   .featured-collections-v2__pagination .swiper-pagination-bullet {
@@ -315,6 +324,10 @@ input[type="radio"]:checked + .featured-collections-v2__tab-label {
     height: 8px;
     border-radius: 4px;
     background-color: #FF3A40;
+  }
+  .featured-collections-v2__shop-all-wrapper{
+    margin-bottom: 20px;
+    padding-right: 20px;
   }
 }
 

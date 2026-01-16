@@ -15,6 +15,10 @@
   background-image: var(--promo-banner-bg-desktop);
 }
 
+.promo-banner__content-wrapper{
+  padding: 0;
+}
+
 .promo-banner__content {
   flex: 1;
   display: flex;
@@ -130,7 +134,7 @@
 @media screen and (max-width: 750px) {
   .promo-banner__container {
     flex-direction: column;
-    /* gap: 2rem; */
+    /* gap: 15px; */
     align-items: center;
     /* padding: 2rem; */
     background-image: var(--promo-banner-bg-mobile, var(--promo-banner-bg-desktop));
@@ -151,11 +155,12 @@
     order: 2;
   }
   .promo-banner__image{
-    object-position: var(--promo-banner-image-position);
+    object-position: top;
   }
 
   .promo-banner__title {
-    font-size: 2.8rem;
+    font-family: 'Montserrat';
+    font-size: 32px;
   }
 
   .promo-banner__description {
@@ -165,6 +170,7 @@
     margin: 12px 0;
     padding: 0 20px;
     text-wrap: unset;
+    color: #000000;
   }
 
   .promo-banner__button {

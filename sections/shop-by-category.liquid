@@ -64,7 +64,8 @@
           {% else %}
             <h3 class="shop-by-category__title">Shop By Category</h3>
           {% endif %}
-          <ul class="shop-by-category__collections-list">
+          
+          {% comment %} <ul class="shop-by-category__collections-list">
             {% for block in section.blocks %}
               {% assign collection_title = block.settings.custom_title | default: block.settings.collection.title %}
               {% assign collection_url = block.settings.collection.url %}
@@ -91,7 +92,7 @@
                 </li>
               {% endif %}
             {% endfor %}
-          </ul>
+          </ul> {% endcomment %}
         </div>
       </div>
     </div>
