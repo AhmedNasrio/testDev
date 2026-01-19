@@ -1,5 +1,6 @@
 {% comment %} /sections/product-highlights.liquid {% endcomment %}
 {{ 'section-product-highlights.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-product-highlights.js' | asset_url }}" type="module"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -27,7 +28,10 @@
   assign blocks_to_show = section.blocks.size
 -%}
 
-<div class="color-{{ section.settings.color_scheme }} product-highlights section-{{ section.id }}-padding">
+<product-highlights
+  data-section-id="{{ section.id }}"
+  class="color-{{ section.settings.color_scheme }} product-highlights section-{{ section.id }}-padding"
+>
   <div class="page-width">
     {%- if section.settings.heading != blank -%}
       <h2 class="product-highlights__heading">
@@ -35,11 +39,11 @@
       </h2>
     {%- endif -%}
 
-    <div class="product-highlights__testimonials-slider">
-      <div class="product-highlights__testimonials-wrapper">
+    <div class="product-highlights__testimonials-slider swiper">
+      <div class="product-highlights__testimonials-wrapper swiper-wrapper">
         {%- for block in section.blocks -%}
           {%- if block.type == 'testimonial' -%}
-            <div class="product-highlights__testimonial-slide" id="testimonial-{{ block.id }}" {{ block.shopify_attributes }}>
+            <div class="product-highlights__testimonial-slide swiper-slide" id="testimonial-{{ block.id }}" {{ block.shopify_attributes }}>
               <div class="product-highlights__container">
                 <div class="product-highlights__content">
                   {%- if block.settings.title_icon != blank -%}
@@ -71,29 +75,6 @@
                       </div>
                     {%- endif -%}
                   </div>
-
-                  {%- if blocks_to_show > 1 -%}
-                    <div class="product-highlights__navigation">
-                      <div class="product-highlights__pagination"></div>
-                      <div class="product-highlights__arrows">
-                        <button type="button" class="product-highlights__arrow product-highlights__arrow--prev" onclick="document.querySelector('.product-highlights__testimonials-wrapper').scrollBy({left: -window.innerWidth, behavior: 'smooth'})">
-                          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="36" height="36" rx="18" transform="matrix(-1 0 0 1 36 0)" fill="#F6F1ED"/>
-                            <path d="M20.5713 23.1431L15.4283 18.0004L20.571 12.8574" stroke="black" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </button>
-                        <button type="button" class="product-highlights__arrow product-highlights__arrow--next" onclick="document.querySelector('.product-highlights__testimonials-wrapper').scrollBy({left: window.innerWidth, behavior: 'smooth'})">
-                          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="36" height="36" rx="18" fill="#F6F1ED"/>
-                            <path d="M15.4287 23.1431L20.5717 18.0004L15.429 12.8574" stroke="black" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  {%- endif -%}
-
-
-
                 </div>
 
                 <div class="product-highlights__media">
@@ -126,10 +107,28 @@
         {%- endfor -%}
       </div>
 
-      
+      {%- if blocks_to_show > 1 -%}
+        <div class="product-highlights__navigation">
+          <div class="product-highlights__pagination"></div>
+          <div class="product-highlights__arrows">
+            <button type="button" class="product-highlights__arrow product-highlights__arrow--prev">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="18" transform="matrix(-1 0 0 1 36 0)" fill="#F6F1ED"/>
+                <path d="M20.5713 23.1431L15.4283 18.0004L20.571 12.8574" stroke="black" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button type="button" class="product-highlights__arrow product-highlights__arrow--next">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="18" fill="#F6F1ED"/>
+                <path d="M15.4287 23.1431L20.5717 18.0004L15.429 12.8574" stroke="black" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      {%- endif -%}
     </div>
   </div>
-</div>
+</product-highlights>
 
 {% schema %}
 {

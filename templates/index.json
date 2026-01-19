@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "hero_1": {
       "type": "hero",
@@ -92,7 +92,7 @@
       "name": "Featured Collections V2",
       "settings": {
         "color_scheme": "",
-        "heading": "Shop by Curated Collection v2",
+        "heading": "Shop by Curated Collection",
         "subheading": "Ready for some merch magic? These thoughtful collections are built to elevate every touchpoint, turning Brand Love moments into brand momentum.",
         "mobile_subheading": "Onboarding, events, or gifting we've got kits that connect people and brands.",
         "heading_alignment": "center",
@@ -109,7 +109,7 @@
         "shop_all_button_text": "SHOP ALL",
         "shop_all_button_url": "shopify://collections/all",
         "padding_top": 80,
-        "padding_bottom": 60
+        "padding_bottom": 0
       }
     },
     "promo_banner_ykRMai": {
@@ -127,8 +127,91 @@
         "image_height": 500,
         "image_fit": "cover",
         "image_position": "center",
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 40
+      }
+    },
+    "shop_categories_43RftD": {
+      "type": "shop-categories",
+      "blocks": {
+        "category_ByFNMp": {
+          "type": "category",
+          "settings": {
+            "collection": "apparel",
+            "custom_title": ""
+          }
+        },
+        "category_49DaQx": {
+          "type": "category",
+          "settings": {
+            "collection": "accessories",
+            "custom_title": ""
+          }
+        },
+        "category_8pn9UH": {
+          "type": "category",
+          "settings": {
+            "collection": "drinkware",
+            "custom_title": ""
+          }
+        },
+        "category_X4kFpF": {
+          "type": "category",
+          "settings": {
+            "collection": "tech",
+            "custom_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_ByFNMp",
+        "category_49DaQx",
+        "category_8pn9UH",
+        "category_X4kFpF"
+      ],
+      "name": "Shop Categories",
+      "settings": {
+        "heading": "Find what your <span>team loves</span>",
+        "heading_highlight_color": "#ff3a40",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product_highlights_gUaG6E": {
+      "type": "product-highlights",
+      "blocks": {
+        "testimonial_dJGmy7": {
+          "type": "testimonial",
+          "settings": {
+            "title_icon": "shopify://shop_images/logos_slack.png",
+            "description": "Boundless helped us create kits our team actually loves. The quality is unmatched and the process was incredibly smooth.",
+            "logo": "shopify://shop_images/fortnox.png",
+            "media_image": "shopify://shop_images/1730e87d9331c3010d015eac627a67ad0cb5291b.png"
+          }
+        },
+        "testimonial_KppV9e": {
+          "type": "testimonial",
+          "settings": {
+            "title_icon": "shopify://shop_images/pngwing.com.png",
+            "description": "Boundless are the most creative team that we ever deal with, they can read minds of their clients and meet whatever they want.",
+            "logo": "shopify://shop_images/fortnox.png",
+            "media_image": "shopify://shop_images/CTech_ZoomMeetingBlog.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_dJGmy7",
+        "testimonial_KppV9e"
+      ],
+      "name": "Product Highlights",
+      "settings": {
+        "heading": "Happy team, real results",
+        "heading_highlight_color": "#ff3a40",
+        "section_background_color": "#f6f1ed",
+        "color_scheme": "",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "hero_v2_pVryft": {
@@ -445,6 +528,56 @@
         "padding_bottom": 40
       }
     },
+    "blogs_6DGtRD": {
+      "type": "blogs",
+      "blocks": {
+        "blog_article_xKftck": {
+          "type": "blog_article",
+          "settings": {
+            "blog": ""
+          }
+        },
+        "blog_article_jqywpf": {
+          "type": "blog_article",
+          "settings": {
+            "blog": ""
+          }
+        },
+        "blog_article_MhaqYM": {
+          "type": "blog_article",
+          "settings": {
+            "blog": ""
+          }
+        }
+      },
+      "block_order": [
+        "blog_article_xKftck",
+        "blog_article_jqywpf",
+        "blog_article_MhaqYM"
+      ],
+      "name": "Blogs",
+      "settings": {
+        "color_scheme": "",
+        "heading_text": "VIEW LOOKBOOKS",
+        "navigation_link_text": "VIEW LOOKBOOK",
+        "navigation_link_url": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "brand_story_QhMEEy": {
+      "type": "brand-story",
+      "name": "Brand Story",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "label_1": "OTHER BRANDS",
+        "label_2": "DEMO",
+        "heading": "Heading",
+        "description": "Description content will appear here."
+      }
+    },
     "shop_by_category_example": {
       "type": "shop-by-category",
       "blocks": {
@@ -505,117 +638,6 @@
         "button_type": "button",
         "padding_top": 40,
         "padding_bottom": 40
-      }
-    },
-    "shop_categories_43RftD": {
-      "type": "shop-categories",
-      "blocks": {
-        "category_NN9k3W": {
-          "type": "category",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "category_Qxphmr": {
-          "type": "category",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "category_ByFNMp": {
-          "type": "category",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "category_49DaQx": {
-          "type": "category",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "category_8pn9UH": {
-          "type": "category",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "category_X4kFpF": {
-          "type": "category",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        }
-      },
-      "block_order": [
-        "category_NN9k3W",
-        "category_Qxphmr",
-        "category_ByFNMp",
-        "category_49DaQx",
-        "category_8pn9UH",
-        "category_X4kFpF"
-      ],
-      "name": "Shop Categories",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "blogs_6DGtRD": {
-      "type": "blogs",
-      "blocks": {
-        "blog_article_xKftck": {
-          "type": "blog_article",
-          "settings": {
-            "blog": ""
-          }
-        },
-        "blog_article_jqywpf": {
-          "type": "blog_article",
-          "settings": {
-            "blog": ""
-          }
-        },
-        "blog_article_MhaqYM": {
-          "type": "blog_article",
-          "settings": {
-            "blog": ""
-          }
-        }
-      },
-      "block_order": [
-        "blog_article_xKftck",
-        "blog_article_jqywpf",
-        "blog_article_MhaqYM"
-      ],
-      "name": "Blogs",
-      "settings": {
-        "color_scheme": "",
-        "heading_text": "VIEW LOOKBOOKS",
-        "navigation_link_text": "VIEW LOOKBOOK",
-        "navigation_link_url": "",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "brand_story_QhMEEy": {
-      "type": "brand-story",
-      "name": "Brand Story",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "label_1": "OTHER BRANDS",
-        "label_2": "DEMO",
-        "heading": "Heading",
-        "description": "Description content will appear here."
       }
     },
     "shop_the_look_V4dmwn": {
@@ -687,49 +709,6 @@
         "show_vendor": false
       }
     },
-    "product_highlights_gUaG6E": {
-      "type": "product-highlights",
-      "blocks": {
-        "feature_f8LrHp": {
-          "type": "feature",
-          "settings": {
-            "text": "Feature text"
-          }
-        },
-        "feature_R8xqLd": {
-          "type": "feature",
-          "settings": {
-            "text": "Feature text"
-          }
-        },
-        "feature_7naTQ3": {
-          "type": "feature",
-          "settings": {
-            "text": "Feature text"
-          }
-        },
-        "feature_fb6KKM": {
-          "type": "feature",
-          "settings": {
-            "text": "Feature text"
-          }
-        }
-      },
-      "block_order": [
-        "feature_f8LrHp",
-        "feature_R8xqLd",
-        "feature_7naTQ3",
-        "feature_fb6KKM"
-      ],
-      "name": "Product Highlights",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "title": "Product Highlights Title",
-        "description": "Product Highlights description will appear here."
-      }
-    },
     "product_details_xbXmpy": {
       "type": "product-details",
       "blocks": {
@@ -764,6 +743,8 @@
     "hero_1",
     "featured_collections_v2_example",
     "promo_banner_ykRMai",
+    "shop_categories_43RftD",
+    "product_highlights_gUaG6E",
     "hero_v2_pVryft",
     "featured_collections_hhETJ9",
     "featured_products_example",
@@ -771,12 +752,10 @@
     "selling_points_v2_6NgzaK",
     "logos_example",
     "promo_banner_example",
-    "shop_by_category_example",
-    "shop_categories_43RftD",
     "blogs_6DGtRD",
     "brand_story_QhMEEy",
+    "shop_by_category_example",
     "shop_the_look_V4dmwn",
-    "product_highlights_gUaG6E",
     "product_details_xbXmpy"
   ]
 }

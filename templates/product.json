@@ -144,27 +144,39 @@
       "type": "product-highlights",
       "blocks": {
         "feature_U7kMbf": {
-          "type": "feature",
+          "type": "testimonial",
           "settings": {
-            "text": "Feature text"
+            "title_icon": "",
+            "description": "Feature text",
+            "logo": "",
+            "media_image": ""
           }
         },
         "feature_YXPqjn": {
-          "type": "feature",
+          "type": "testimonial",
           "settings": {
-            "text": "Feature text"
+            "title_icon": "",
+            "description": "Feature text",
+            "logo": "",
+            "media_image": ""
           }
         },
         "feature_YmBfeW": {
-          "type": "feature",
+          "type": "testimonial",
           "settings": {
-            "text": "Feature text"
+            "title_icon": "",
+            "description": "Feature text",
+            "logo": "",
+            "media_image": ""
           }
         },
         "feature_j8diJD": {
-          "type": "feature",
+          "type": "testimonial",
           "settings": {
-            "text": "Feature text"
+            "title_icon": "",
+            "description": "Feature text",
+            "logo": "",
+            "media_image": ""
           }
         }
       },
@@ -179,8 +191,9 @@
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 40,
-        "title": "Product Highlights Title",
-        "description": "Product Highlights description will appear here."
+        "heading": "Product Highlights Title",
+        "heading_highlight_color": "#FF3A40",
+        "section_background_color": "#F6F1ED"
       }
     },
     "shop_the_look_ty6MmL": {
