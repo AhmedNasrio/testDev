@@ -312,6 +312,8 @@
         "heading_text": "Featured Stories",
         "navigation_link_text": "VIEW LOOKBOOK",
         "navigation_link_url": "",
+        "explore_more_text": "EXPLORE MORE",
+        "explore_more_url": "shopify://blogs/news",
         "padding_top": 40,
         "padding_bottom": 40
       }
