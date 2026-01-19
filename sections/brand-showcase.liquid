@@ -1,0 +1,157 @@
+{% comment %} /sections/brand-showcase.liquid {% endcomment %}
+{{ 'section-brand-showcase.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .brand-showcase {
+    background-color: {{ section.settings.background_color }};
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} brand-showcase section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="brand-showcase__container">
+      {%- if section.settings.logo_image != blank -%}
+        <div class="brand-showcase__logo-top">
+          <img
+            src="{{ section.settings.logo_image | image_url: width: 300 }}"
+            alt="{{ section.settings.logo_image.alt | escape }}"
+            loading="lazy"
+            width="{{ section.settings.logo_image.width }}"
+            height="{{ section.settings.logo_image.height }}"
+          >
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <p class="brand-showcase__text">
+          {{ section.settings.text | escape }}
+        </p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="brand-showcase__logos">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'brand_logo' and block.settings.logo_image != blank -%}
+              <div class="brand-showcase__logo" {{ block.shopify_attributes }}>
+                <img
+                  src="{{ block.settings.logo_image | image_url: width: 200 }}"
+                  alt="{{ block.settings.logo_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ block.settings.logo_image.width }}"
+                  height="{{ block.settings.logo_image.height }}"
+                >
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Showcase",
+  "tag": "section",
+  "class": "brand-showcase",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image",
+      "info": "Logo image that appears at the top of the section"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "We help brands create merch that makes people feel something—from welcome kits to event swag to culture-powered moments that last."
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section Background Color",
+      "default": "#F6F1ED"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Spacing Settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand_logo",
+      "name": "Brand Logo",
+      "limit": 7,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Showcase",
+      "blocks": [
+        { "type": "brand_logo" },
+        { "type": "brand_logo" },
+        { "type": "brand_logo" },
+        { "type": "brand_logo" },
+        { "type": "brand_logo" },
+        { "type": "brand_logo" },
+        { "type": "brand_logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
