@@ -84,25 +84,52 @@
                   height="{{ display_image.height }}"
                   class="blogs-section__image"
                 >
+                {%- if block.settings.logo_image != blank -%}
+                  <div class="blogs-section__logo">
+                    <img
+                      src="{{ block.settings.logo_image | image_url: width: 200 }}"
+                      alt="{{ block.settings.logo_image.alt | escape }}"
+                      loading="lazy"
+                      width="{{ block.settings.logo_image.width }}"
+                      height="{{ block.settings.logo_image.height }}"
+                    >
+                  </div>
+                {%- endif -%}
+                <div class="blogs-section__content">
+                  <p class="blogs-section__article-title">
+                    {{ article_title | escape }}
+                  </p>
+                  <p class="blogs-section__description">
+                    {{ article_description | escape }}
+                  </p>
+                  <a href="{{ article_url }}" class="blogs-section__read-more"> READ STORY </a>
+                </div>
               </div>
             {%- else -%}
               <div class="blogs-section__image-placeholder">
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                <div class="blogs-section__content">
+                  <p class="blogs-section__article-title">
+                    {{ article_title | escape }}
+                  </p>
+                  <p class="blogs-section__description">
+                    {{ article_description | escape }}
+                  </p>
+                  <a href="{{ article_url }}" class="blogs-section__read-more"> READ STORY </a>
+                </div>
               </div>
             {%- endif -%}
-
-            <div class="blogs-section__content">
-              <p class="blogs-section__article-title">
-                {{ article_title | escape }}
-              </p>
-              <p class="blogs-section__description">
-                {{ article_description | escape }}
-              </p>
-              <a href="{{ article_url }}" class="blogs-section__read-more"> READ MORE </a>
-            </div>
           </article>
         {%- endfor -%}
       </div>
+
+      {%- if section.settings.explore_more_text != blank and section.settings.explore_more_url != blank -%}
+        <div class="blogs-section__button-wrapper">
+          <a href="{{ section.settings.explore_more_url }}" class="blogs-section__explore-more-button">
+            {{ section.settings.explore_more_text | escape }}
+          </a>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 {%- endif -%}
@@ -146,6 +173,21 @@
     },
     {
       "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "explore_more_text",
+      "label": "Explore More Button Text",
+      "default": "EXPLORE MORE"
+    },
+    {
+      "type": "url",
+      "id": "explore_more_url",
+      "label": "Explore More Button URL"
+    },
+    {
+      "type": "header",
       "content": "Spacing Settings"
     },
     {
@@ -185,6 +227,12 @@
           "id": "image",
           "label": "Image",
           "info": "Optional: Override the article's featured image"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image",
+          "info": "Logo image that appears at the top left of the image"
         }
       ]
     }
