@@ -146,37 +146,29 @@
         "feature_U7kMbf": {
           "type": "testimonial",
           "settings": {
-            "title_icon": "",
-            "description": "Feature text",
             "logo": "",
-            "media_image": ""
+            "description": "Feature text"
           }
         },
         "feature_YXPqjn": {
           "type": "testimonial",
           "settings": {
-            "title_icon": "",
-            "description": "Feature text",
             "logo": "",
-            "media_image": ""
+            "description": "Feature text"
           }
         },
         "feature_YmBfeW": {
           "type": "testimonial",
           "settings": {
-            "title_icon": "",
-            "description": "Feature text",
             "logo": "",
-            "media_image": ""
+            "description": "Feature text"
           }
         },
         "feature_j8diJD": {
           "type": "testimonial",
           "settings": {
-            "title_icon": "",
-            "description": "Feature text",
             "logo": "",
-            "media_image": ""
+            "description": "Feature text"
           }
         }
       },
@@ -188,12 +180,12 @@
       ],
       "name": "Product Highlights",
       "settings": {
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40,
         "heading": "Product Highlights Title",
         "heading_highlight_color": "#FF3A40",
-        "section_background_color": "#F6F1ED"
+        "section_background_color": "#F6F1ED",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "shop_the_look_ty6MmL": {
@@ -286,12 +278,11 @@
       "name": "Shop The Look",
       "settings": {
         "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
         "heading": "Shop The Look",
         "view_all_url": "",
-        "show_vendor": false,
-        "image_ratio": "adapt",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_vendor": false
       }
     },
     "relative_products_nWjQjY": {

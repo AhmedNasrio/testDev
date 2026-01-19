@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "hero_1": {
       "type": "hero",
@@ -22,7 +22,7 @@
         "content_alignment": "center",
         "vertical_alignment": "center",
         "stars_text": "Trusted By 1,539+ Brands",
-        "heading": "Where <span style=\"text-decoration:underline\">Brand Love</span> meets cart joy.",
+        "heading": "Where <u>Brand Love</u> meets cart joy.",
         "subheading": "Shop curated collections, trending merch, and high-impact corporate gifts that delight people and Inspire Brand Love™",
         "button_text": "SHOP COLLECTIONS",
         "button_text2": "EXPLORE KITS & BUNDLES",
@@ -206,7 +206,7 @@
       ],
       "name": "Product Highlights",
       "settings": {
-        "heading": "Happy team, real results",
+        "heading": "Happy team, <span>real results</span>",
         "heading_highlight_color": "#ff3a40",
         "section_background_color": "#f6f1ed",
         "color_scheme": "",
