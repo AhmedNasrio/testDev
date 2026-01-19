@@ -214,6 +214,71 @@
         "padding_bottom": 80
       }
     },
+    "brand_showcase_6QbbPn": {
+      "type": "brand-showcase",
+      "blocks": {
+        "brand_logo_crg6Mw": {
+          "type": "brand_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/fede79b8239eae7d8fe5e797871f78a0d5670d96.png"
+          }
+        },
+        "brand_logo_rpAkEB": {
+          "type": "brand_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/a7d223816ec5959f72f0b5dd38efdb8735ac6b13.png"
+          }
+        },
+        "brand_logo_xjQiLN": {
+          "type": "brand_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/76cd3ad9e338339b63b57aa8f346bdb6c2b847ce.png"
+          }
+        },
+        "brand_logo_tgf6nQ": {
+          "type": "brand_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/a628a9bd35fe6f57268f2f4d85b9c388657e2a36.png"
+          }
+        },
+        "brand_logo_Acc6WE": {
+          "type": "brand_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/ec9e6dc4cf6c3df99be6bcde474acb1c6c71c104.png"
+          }
+        },
+        "brand_logo_8JBki3": {
+          "type": "brand_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/5bb09c997979d3ba2a74777211b813497632018c.png"
+          }
+        },
+        "brand_logo_dLFCme": {
+          "type": "brand_logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/d99e4612bd959c147c4a967b73a389135e34aae7.png"
+          }
+        }
+      },
+      "block_order": [
+        "brand_logo_crg6Mw",
+        "brand_logo_rpAkEB",
+        "brand_logo_xjQiLN",
+        "brand_logo_tgf6nQ",
+        "brand_logo_Acc6WE",
+        "brand_logo_8JBki3",
+        "brand_logo_dLFCme"
+      ],
+      "name": "Brand Showcase",
+      "settings": {
+        "logo_image": "shopify://shop_images/f57e63501e48f108c888872b7b4b2af1530d7019.png",
+        "text": "We help brands create merch that makes people feel something—from welcome kits to event swag to culture-powered moments that last.",
+        "background_color": "#F6F1ED",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "hero_v2_pVryft": {
       "type": "hero-v2",
       "blocks": {
@@ -745,6 +810,7 @@
     "promo_banner_ykRMai",
     "shop_categories_43RftD",
     "product_highlights_gUaG6E",
+    "brand_showcase_6QbbPn",
     "hero_v2_pVryft",
     "featured_collections_hhETJ9",
     "featured_products_example",
