@@ -727,7 +727,61 @@
     "shop_the_look_V4dmwn": {
       "type": "shop-the-look",
       "blocks": {
-        "slide_crhBhB": {
+        "image_CKzpeh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/868955301e87e698b7ef46da00277dca82b8e118.jpg",
+            "hotspot_1_enabled": false,
+            "hotspot_1_product": "",
+            "hotspot_1_horizontal": 30,
+            "hotspot_1_vertical": 30,
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40
+          }
+        },
+        "image_k4abij": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/9c4bb1f55f8845864a58e905957ad85e7ae29629.png",
+            "hotspot_1_enabled": false,
+            "hotspot_1_product": "",
+            "hotspot_1_horizontal": 30,
+            "hotspot_1_vertical": 30,
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40
+          }
+        },
+        "image_YBKKwi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/f79047ebe86180137cfa87fe1fcdb6ef2e1b15da.png",
+            "hotspot_1_enabled": false,
+            "hotspot_1_product": "",
+            "hotspot_1_horizontal": 30,
+            "hotspot_1_vertical": 30,
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40
+          }
+        },
+        "image_hkBpMX": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/ba3fa85467609bd241b37af6fb2b8cc19edee7d3.png",
@@ -744,10 +798,51 @@
             "hotspot_3_horizontal": 70,
             "hotspot_3_vertical": 40
           }
+        },
+        "image_78BjhM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/e75aea102b01c1e07b81eba88db850ec8775f111.png",
+            "hotspot_1_enabled": false,
+            "hotspot_1_product": "",
+            "hotspot_1_horizontal": 30,
+            "hotspot_1_vertical": 30,
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40
+          }
+        },
+        "image_Cw3rt7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/7f3181c6d675e27ca8bcf3edbaac0a75d5e90bbf.png",
+            "hotspot_1_enabled": false,
+            "hotspot_1_product": "",
+            "hotspot_1_horizontal": 30,
+            "hotspot_1_vertical": 30,
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40
+          }
         }
       },
       "block_order": [
-        "slide_crhBhB"
+        "image_CKzpeh",
+        "image_k4abij",
+        "image_YBKKwi",
+        "image_hkBpMX",
+        "image_78BjhM",
+        "image_Cw3rt7"
       ],
       "name": "Shop The Look",
       "settings": {
