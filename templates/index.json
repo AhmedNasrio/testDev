@@ -321,6 +321,20 @@
         "padding_bottom": 80
       }
     },
+    "shop_by_category_example": {
+      "type": "shop-by-category",
+      "settings": {
+        "image": "shopify://shop_images/5014324867d144a8aa7fbc2fdcedace801c134a0.png",
+        "heading": "Your custom branded collection is waiting.",
+        "subheading": "Get one of our curated product lookbooks with your unique branding. Simply fill out this quick form!",
+        "button_text": "Request your custom lookbook",
+        "button_url": "shopify://pages/data-sharing-opt-out",
+        "background_color": "#df283a",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "hero_v2_pVryft": {
       "type": "hero-v2",
       "blocks": {
@@ -648,68 +662,6 @@
         "description": "Description content will appear here."
       }
     },
-    "shop_by_category_example": {
-      "type": "shop-by-category",
-      "blocks": {
-        "collection_1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_4": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_5": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_6": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_1",
-        "collection_2",
-        "collection_3",
-        "collection_4",
-        "collection_5",
-        "collection_6"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "heading": "",
-        "button_type": "button",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
     "shop_the_look_V4dmwn": {
       "type": "shop-the-look",
       "blocks": {
@@ -817,6 +769,7 @@
     "product_highlights_gUaG6E",
     "brand_showcase_6QbbPn",
     "blogs_6DGtRD",
+    "shop_by_category_example",
     "hero_v2_pVryft",
     "featured_collections_hhETJ9",
     "featured_products_example",
@@ -825,7 +778,6 @@
     "logos_example",
     "promo_banner_example",
     "brand_story_QhMEEy",
-    "shop_by_category_example",
     "shop_the_look_V4dmwn",
     "product_details_xbXmpy"
   ]
