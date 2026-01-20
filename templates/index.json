@@ -321,20 +321,6 @@
         "padding_bottom": 80
       }
     },
-    "shop_by_category_example": {
-      "type": "shop-by-category",
-      "settings": {
-        "image": "shopify://shop_images/5014324867d144a8aa7fbc2fdcedace801c134a0.png",
-        "heading": "Your custom branded collection is waiting.",
-        "subheading": "Get one of our curated product lookbooks with your unique branding. Simply fill out this quick form!",
-        "button_text": "Request your custom lookbook",
-        "button_url": "shopify://pages/data-sharing-opt-out",
-        "background_color": "#df283a",
-        "color_scheme": "",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "faq_P8dYUr": {
       "type": "faq",
       "blocks": {
@@ -395,6 +381,20 @@
         "color_scheme": "",
         "padding_top": 52,
         "padding_bottom": 80
+      }
+    },
+    "shop_by_category_example": {
+      "type": "shop-by-category",
+      "settings": {
+        "image": "shopify://shop_images/5014324867d144a8aa7fbc2fdcedace801c134a0.png",
+        "heading": "Your custom branded collection is waiting.",
+        "subheading": "Get one of our curated product lookbooks with your unique branding. Simply fill out this quick form!",
+        "button_text": "Request your custom lookbook",
+        "button_url": "shopify://pages/data-sharing-opt-out",
+        "background_color": "#df283a",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "hero_v2_pVryft": {
@@ -831,8 +831,8 @@
     "product_highlights_gUaG6E",
     "brand_showcase_6QbbPn",
     "blogs_6DGtRD",
-    "shop_by_category_example",
     "faq_P8dYUr",
+    "shop_by_category_example",
     "hero_v2_pVryft",
     "featured_collections_hhETJ9",
     "featured_products_example",
