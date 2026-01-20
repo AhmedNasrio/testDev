@@ -728,29 +728,21 @@
       "type": "shop-the-look",
       "blocks": {
         "slide_crhBhB": {
-          "type": "slide",
+          "type": "image",
           "settings": {
             "image": "shopify://shop_images/ba3fa85467609bd241b37af6fb2b8cc19edee7d3.png",
-            "product_1": "volkl-rtm-77-mens-skis-4motion-11-0-tc-bindings-2015",
-            "product_2": "volkl-rtm-8-0-mens-skis-10-0-fastrak-iii-bindings-2015",
-            "product_3": "rossignol-experience-84-ca-flat-2015",
-            "product_4": "volkl-rtm-84-uvo-skis-ipt-wide-ride-xl-12-0-bindings-2016",
             "hotspot_1_enabled": false,
-            "hotspot_1_text": "",
+            "hotspot_1_product": "",
             "hotspot_1_horizontal": 30,
             "hotspot_1_vertical": 30,
             "hotspot_2_enabled": false,
-            "hotspot_2_text": "",
+            "hotspot_2_product": "",
             "hotspot_2_horizontal": 50,
             "hotspot_2_vertical": 50,
             "hotspot_3_enabled": false,
-            "hotspot_3_text": "",
+            "hotspot_3_product": "",
             "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40,
-            "hotspot_4_enabled": false,
-            "hotspot_4_text": "",
-            "hotspot_4_horizontal": 60,
-            "hotspot_4_vertical": 70
+            "hotspot_3_vertical": 40
           }
         }
       },
