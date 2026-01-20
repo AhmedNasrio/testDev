@@ -285,19 +285,22 @@
         "blog_article_xKftck": {
           "type": "blog_article",
           "settings": {
-            "blog": "news/succussion-key"
+            "blog": "news/succussion-key",
+            "logo_image": "shopify://shop_images/Vector_6.png"
           }
         },
         "blog_article_jqywpf": {
           "type": "blog_article",
           "settings": {
-            "blog": "news/welcome-packages"
+            "blog": "news/welcome-packages",
+            "logo_image": "shopify://shop_images/2e42274a1d5874c6c41ecc8402e5216d34d32fef.png"
           }
         },
         "blog_article_MhaqYM": {
           "type": "blog_article",
           "settings": {
-            "blog": "news/orientation-essentials"
+            "blog": "news/orientation-essentials",
+            "logo_image": "shopify://shop_images/f56abca5c2753281c49499b11635b614defb832e.png"
           }
         }
       },
