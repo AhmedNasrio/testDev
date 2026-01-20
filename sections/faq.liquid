@@ -36,10 +36,16 @@
             >
               <h3 class="faq__title">{{ block.settings.question | default: 'Question' }}</h3>
               <span class="faq__icon" x-show="openBlock !== {{ forloop.index0 }}">
-                {{ 'icon-plus.svg' | inline_asset_content }}
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="36" y="1.57361e-06" width="36" height="36" rx="18" transform="rotate(90 36 1.57361e-06)" fill="#202123"/>
+                  <path d="M12.8574 15.4287L18.0001 20.5717L23.1431 15.429" stroke="#F6F1ED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </span>
               <span class="faq__icon" x-show="openBlock === {{ forloop.index0 }}" x-cloak>
-                {{ 'icon-minus.svg' | inline_asset_content }}
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="36" width="36" height="36" rx="18" transform="rotate(-90 0 36)" fill="#202123"/>
+                  <path d="M24.6429 21.3214L18.0001 14.7143L11.3572 21.3214" stroke="#F6F1ED" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </span>
             </button>
 
