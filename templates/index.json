@@ -335,6 +335,68 @@
         "padding_bottom": 60
       }
     },
+    "faq_P8dYUr": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_gHkgCG": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the Brand Love Shop?",
+            "answer": "<p>Experience Luxury Defined by Brand Love.</p>"
+          }
+        },
+        "faq_item_PXnBrg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I order just one item, or do you only do bulk?",
+            "answer": "<p>From a Single Treat to Wholesale Supply - Find It All Here!</p>"
+          }
+        },
+        "faq_item_fyNNWp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer custom branding?",
+            "answer": "<p>Customize Your Branding with Our Tailored Solutions for a Professional Look.</p>"
+          }
+        },
+        "faq_item_twkD8c": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I build a custom kit?",
+            "answer": "<p>Create Your Ideal Setup with Our Easy-to-Use Custom Kit Builder.</p>"
+          }
+        },
+        "faq_item_MYMKbb": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's the average turnaround time?",
+            "answer": "<p>Discover Fast Shipping on a Variety of Options.</p>"
+          }
+        },
+        "faq_item_wgxbXV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you help with design?",
+            "answer": "<p>Elevate Your Space with Professional Design Assistance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_gHkgCG",
+        "faq_item_PXnBrg",
+        "faq_item_fyNNWp",
+        "faq_item_twkD8c",
+        "faq_item_MYMKbb",
+        "faq_item_wgxbXV"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "title": "Frequently Asked Question",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "hero_v2_pVryft": {
       "type": "hero-v2",
       "blocks": {
@@ -770,6 +832,7 @@
     "brand_showcase_6QbbPn",
     "blogs_6DGtRD",
     "shop_by_category_example",
+    "faq_P8dYUr",
     "hero_v2_pVryft",
     "featured_collections_hhETJ9",
     "featured_products_example",
