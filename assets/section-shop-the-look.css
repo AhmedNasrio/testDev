@@ -17,6 +17,11 @@
   font-size: 3.2rem;
   font-weight: 600;
   line-height: 1.2;
+  text-align: center;
+}
+
+.shop-the-look__heading strong {
+  color: #FF3A40;
 }
 
 .shop-the-look__view-all {
@@ -27,41 +32,52 @@
 
 
 
-/* Slider Container */
-.shop-the-look__slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Hide slides before Swiper initializes */
-.shop-the-look__slider:not(.swiper-initialized) .swiper-slide:not(:first-child) {
-  display: none;
-}
-
-.shop-the-look__slide {
+/* Grid Container */
+.shop-the-look__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 12px;
+  row-gap: 8px;
+  width: 100%;
 }
 
-@media screen and (min-width: 990px) {
-  .shop-the-look__slide {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.6rem;
-  }
+.shop-the-look__grid-item {
+  width: 100%;
+}
 
+@media screen and (max-width: 989px) {
+  .shop-the-look__grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 8px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .shop-the-look__grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 8px;
+  }
 }
 
 /* Image Container with Hotspots */
 .shop-the-look__image-container {
   position: relative;
   width: 100%;
-  height: 75%;
   overflow: hidden;
   border-radius: 12px;
   background-color: rgb(var(--color-background));
+}
+
+/* Odd items (1st, 3rd, 5th) - Square aspect ratio 1:1 */
+.shop-the-look__grid-item:nth-child(odd) .shop-the-look__image-container {
+  aspect-ratio: 1 / 1;
+}
+
+/* Even items (2nd, 4th, 6th) - Tall aspect ratio 1:1.5 */
+.shop-the-look__grid-item:nth-child(even) .shop-the-look__image-container {
+  aspect-ratio: 1 / 1.5;
 }
 
 .shop-the-look__image {
@@ -113,33 +129,24 @@
 
 .shop-the-look__hotspot-dot {
   position: absolute;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background-color: rgb(var(--color-background));
+  background-color: #FF3A40;
+  border: 2px solid #FFFFFF;
   z-index: 2;
   transition: transform 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(255, 58, 64, 0.4);
 }
 
 .shop-the-look__hotspot-pulse {
   position: absolute;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background-color: rgb(var(--color-foreground));
-  opacity: 0.2;
+  background-color: #FF3A40;
+  opacity: 0.3;
   animation: hotspot-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.shop-the-look__hotspot-icon {
-  position: absolute;
-  width: 1.4rem;
-  height: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  color: rgb(var(--color-foreground));
 }
 
 .card-media-no-image {
@@ -180,27 +187,25 @@
   transform: scale(1.2);
 }
 
-/* Tooltip */
-.shop-the-look__hotspot-tooltip {
+/* Product Popup */
+.shop-the-look__hotspot-popup {
   position: absolute;
-  top: calc(100% + 0.75rem);
+  top: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%);
-  width: max-content;
-  max-width: 280px;
-  background-color: rgb(var(--color-background));
-  border: 1px solid rgba(var(--color-foreground), 0.15);
-  border-radius: 8px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  width: 280px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  transform: translateX(-50%) translateY(-0.5rem);
+  transform: translateX(-50%) translateY(-8px);
   z-index: 10;
+  pointer-events: none;
 }
 
-.shop-the-look__hotspot-tooltip::before {
+.shop-the-look__hotspot-popup::before {
   content: '';
   position: absolute;
   bottom: 100%;
@@ -208,140 +213,108 @@
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid rgb(var(--color-background));
-  filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.05));
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #FFFFFF;
 }
 
-.shop-the-look__hotspot.is-active .shop-the-look__hotspot-tooltip {
+.shop-the-look__hotspot.is-active .shop-the-look__hotspot-popup {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
 }
 
-.shop-the-look__hotspot-content {
-  color: rgb(var(--color-foreground));
-  font-size: 0.875rem;
-  line-height: 1.6;
-  text-align: center;
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Shop The Look – scoped overrides from product card */
-.shop-the-look .quick-add-modal__toggle {
-  display: none;
-}
-
-.shop-the-look .product-card .card-media-child {
-  border-radius: 12px;
-}
-
-.shop-the-look h2.card-heading.product-grid-heading,
-.card__heading {
-  font-size: 1.6rem;
-}
-
-.shop-the-look .price__regular {
-  font-size: 1.4rem;
-  color: rgba(var(--color-foreground), 0.6);
-}
-
-.shop-the-look .card-media::before {
-  padding-bottom: 130%;
-}
-
-
-/* Responsive tooltip positioning */
-@media screen and (max-width: 749px) {
-  .shop-the-look__hotspot-tooltip {
-    max-width: 240px;
-    padding: 0.875rem 1.25rem;
-  }
-
-  .shop-the-look__hotspot-content {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-}
-
-/* Products Grid */
-.shop-the-look__products {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-@media screen and (min-width: 750px) {
-  .shop-the-look__products {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-.shop-the-look__product-card {
-  width: 100%;
-}
-
-/* Controls Container */
-.shop-the-look__controls {
+.shop-the-look__hotspot-popup-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 2rem;
-  gap: 2rem;
+  gap: 12px;
+  padding: 16px;
 }
 
-/* Progress Bar */
-.shop-the-look__progress-bar {
-  flex: 1;
-  height: 2px;
-  background-color: rgba(var(--color-foreground), 0.15);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-}
-
-.shop-the-look__progress-fill {
-  height: 100%;
-  background-color: rgb(var(--color-foreground));
-  width: 0%;
-  transition: width 0.3s ease;
-}
-
-/* Navigation */
-.shop-the-look__navigation {
-  display: flex;
-  gap: 0.5rem;
+.shop-the-look__hotspot-popup-image {
   flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #F6F1ED;
 }
 
-.shop-the-look__nav-button {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  border: none;
-  background-color: rgb(var(--color-background));
-  color: rgb(var(--color-foreground));
+.shop-the-look__hotspot-popup-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.shop-the-look__hotspot-popup-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.shop-the-look__hotspot-popup-title {
+  margin: 0 0 4px 0;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  font-weight: 400;
+  color: #202123;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shop-the-look__hotspot-popup-price {
+  font-family: 'Montserrat';
+  font-size: 14px;
+  font-weight: 500;
+  color: #202123;
+}
+
+.shop-the-look__hotspot-popup-arrow {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  color: #202123;
+  transition: transform 0.2s ease;
 }
 
-
-.shop-the-look__nav-button:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
+.shop-the-look__hotspot-popup-arrow:hover {
+  transform: translateX(4px);
 }
 
-.shop-the-look__nav-button svg {
-  width: 2rem;
-  height: 2rem;
-  
+.shop-the-look__hotspot-popup-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive popup positioning */
+@media screen and (max-width: 749px) {
+  .shop-the-look__hotspot-popup {
+    width: 240px;
+  }
+
+  .shop-the-look__hotspot-popup-content {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .shop-the-look__hotspot-popup-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .shop-the-look__hotspot-popup-title {
+    font-size: 13px;
+  }
+
+  .shop-the-look__hotspot-popup-price {
+    font-size: 13px;
+  }
 }
 
 /* Mobile adjustments */

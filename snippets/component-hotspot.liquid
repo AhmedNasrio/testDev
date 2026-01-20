@@ -1,24 +1,26 @@
 {% comment %}
-  Renders a hotspot with tooltip
+  Renders a hotspot with product popup
 
   Accepts:
   - enabled: {Boolean} Whether the hotspot is enabled (required)
-  - text: {String} Tooltip content text
+  - product: {Object} Product Liquid object
   - horizontal: {Number} Horizontal position percentage (0-100)
   - vertical: {Number} Vertical position percentage (0-100)
   - index: {Number} Hotspot index number
+  - block_id: {String} Block ID for unique popup ID
 
   Example usage:
   {% render 'component-hotspot',
     enabled: block.settings.hotspot_1_enabled,
-    text: block.settings.hotspot_1_text,
+    product: block.settings.hotspot_1_product,
     horizontal: block.settings.hotspot_1_horizontal,
     vertical: block.settings.hotspot_1_vertical,
-    index: 1
+    index: 1,
+    block_id: block.id
   %}
 {% endcomment %}
 
-{%- if enabled -%}
+{%- if enabled and product != blank -%}
   <div
     class="shop-the-look__hotspot"
     style="
@@ -32,19 +34,38 @@
       class="shop-the-look__hotspot-trigger"
       aria-label="View product details"
       aria-expanded="false"
+      data-popup-trigger="hotspot-{{ block_id }}-{{ index }}"
     >
       <span class="shop-the-look__hotspot-dot"></span>
       <span class="shop-the-look__hotspot-pulse"></span>
-      <span class="shop-the-look__hotspot-icon">
-        {{ 'icon-plus.svg' | inline_asset_content }}
-      </span>
     </button>
-    {%- if text != blank -%}
-      <div class="shop-the-look__hotspot-tooltip">
-        <div class="shop-the-look__hotspot-content">
-          {{ text }}
+    <div 
+      class="shop-the-look__hotspot-popup" 
+      id="hotspot-{{ block_id }}-{{ index }}"
+      data-product-url="{{ product.url }}"
+    >
+      <div class="shop-the-look__hotspot-popup-content">
+        {%- if product.featured_image != blank -%}
+          <div class="shop-the-look__hotspot-popup-image">
+            <img
+              src="{{ product.featured_image | image_url: width: 200 }}"
+              alt="{{ product.featured_image.alt | default: product.title | escape }}"
+              loading="lazy"
+              width="{{ product.featured_image.width }}"
+              height="{{ product.featured_image.height }}"
+            >
+          </div>
+        {%- endif -%}
+        <div class="shop-the-look__hotspot-popup-info">
+          <h3 class="shop-the-look__hotspot-popup-title">{{ product.title | escape }}</h3>
+          <div class="shop-the-look__hotspot-popup-price">
+            {% render 'component-product-price', product: product, show_compare_at_price: false %}
+          </div>
         </div>
+        <a href="{{ product.url }}" class="shop-the-look__hotspot-popup-arrow" aria-label="View {{ product.title | escape }}">
+          {{ 'icon-arrow-next.svg' | inline_asset_content }}
+        </a>
       </div>
-    {%- endif -%}
+    </div>
   </div>
 {%- endif -%}
