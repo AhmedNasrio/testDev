@@ -735,14 +735,17 @@
             "hotspot_1_product": "dark-denim-top",
             "hotspot_1_horizontal": 59,
             "hotspot_1_vertical": 18,
+            "hotspot_1_popup_position": "bottom",
             "hotspot_2_enabled": false,
             "hotspot_2_product": "",
             "hotspot_2_horizontal": 50,
             "hotspot_2_vertical": 50,
+            "hotspot_2_popup_position": "top",
             "hotspot_3_enabled": false,
             "hotspot_3_product": "",
             "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
           }
         },
         "image_k4abij": {
@@ -753,14 +756,17 @@
             "hotspot_1_product": "ocean-bottle-17-oz",
             "hotspot_1_horizontal": 54,
             "hotspot_1_vertical": 40,
+            "hotspot_1_popup_position": "top",
             "hotspot_2_enabled": false,
             "hotspot_2_product": "",
             "hotspot_2_horizontal": 50,
             "hotspot_2_vertical": 50,
+            "hotspot_2_popup_position": "top",
             "hotspot_3_enabled": false,
             "hotspot_3_product": "",
             "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
           }
         },
         "image_YBKKwi": {
@@ -771,14 +777,17 @@
             "hotspot_1_product": "blue-silk-tuxedo",
             "hotspot_1_horizontal": 40,
             "hotspot_1_vertical": 40,
+            "hotspot_1_popup_position": "top",
             "hotspot_2_enabled": false,
             "hotspot_2_product": "",
             "hotspot_2_horizontal": 50,
             "hotspot_2_vertical": 50,
+            "hotspot_2_popup_position": "top",
             "hotspot_3_enabled": false,
             "hotspot_3_product": "",
             "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
           }
         },
         "image_hkBpMX": {
@@ -789,14 +798,17 @@
             "hotspot_1_product": "burton-dunmore-jacket-2016",
             "hotspot_1_horizontal": 35,
             "hotspot_1_vertical": 30,
+            "hotspot_1_popup_position": "top",
             "hotspot_2_enabled": true,
             "hotspot_2_product": "roxy-andie-jacket-201-womens",
             "hotspot_2_horizontal": 63,
             "hotspot_2_vertical": 54,
+            "hotspot_2_popup_position": "top",
             "hotspot_3_enabled": false,
             "hotspot_3_product": "",
             "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
           }
         },
         "image_78BjhM": {
@@ -807,14 +819,17 @@
             "hotspot_1_product": "red-sports-tee",
             "hotspot_1_horizontal": 54,
             "hotspot_1_vertical": 59,
+            "hotspot_1_popup_position": "top",
             "hotspot_2_enabled": false,
             "hotspot_2_product": "",
             "hotspot_2_horizontal": 50,
             "hotspot_2_vertical": 50,
+            "hotspot_2_popup_position": "top",
             "hotspot_3_enabled": false,
             "hotspot_3_product": "",
             "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
           }
         },
         "image_Cw3rt7": {
@@ -825,14 +840,17 @@
             "hotspot_1_product": "dark-denim-top",
             "hotspot_1_horizontal": 61,
             "hotspot_1_vertical": 30,
+            "hotspot_1_popup_position": "top",
             "hotspot_2_enabled": true,
             "hotspot_2_product": "o-t-shirt",
             "hotspot_2_horizontal": 50,
             "hotspot_2_vertical": 88,
+            "hotspot_2_popup_position": "top",
             "hotspot_3_enabled": false,
             "hotspot_3_product": "",
             "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
           }
         }
       },
