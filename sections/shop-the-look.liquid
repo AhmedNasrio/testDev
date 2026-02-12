@@ -19,7 +19,7 @@
 
 <div class="shop-the-look color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   <shop-the-look data-section-id="{{ section.id }}">
-    <div class="page-width">
+    <div class="page-width shop-the-look__container">
       {% if section.settings.heading != blank %}
         <div class="shop-the-look__header">
           <h2 class="shop-the-look__heading">{{ section.settings.heading }}</h2>
@@ -30,77 +30,15 @@
         id="shop-the-look-{{ section.id }}"
         class="shop-the-look__grid"
       >
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'image' -%}
-            <div class="shop-the-look__grid-item" {{ block.shopify_attributes }}>
-              <div class="shop-the-look__image-container">
-                {% if block.settings.image != blank %}
-                  <img
-                    srcset="
-                      {%- if block.settings.image.width >= 400 -%}{{ block.settings.image | image_url: width: 400 }} 400w,{%- endif -%}
-                      {%- if block.settings.image.width >= 600 -%}{{ block.settings.image | image_url: width: 600 }} 600w,{%- endif -%}
-                      {%- if block.settings.image.width >= 800 -%}{{ block.settings.image | image_url: width: 800 }} 800w,{%- endif -%}
-                      {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
-                    "
-                    src="{{ block.settings.image | image_url: width: 800 }}"
-                    sizes="(min-width: 990px) 33vw, 100vw"
-                    alt="{{ block.settings.image.alt | default: section.settings.heading | escape }}"
-                    loading="lazy"
-                    width="{{ block.settings.image.width }}"
-                    height="{{ block.settings.image.height }}"
-                    class="shop-the-look__image"
-                  >
-                {% else %}
-                  <div class="shop-the-look__image-placeholder">
-                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                  </div>
-                {% endif %}
+        {%- liquid
+          assign image_blocks = section.blocks | where: 'type', 'image'
+        -%}
 
-                {%- comment -%} Hotspots {%- endcomment -%}
-                {%- liquid
-                  assign hotspot_1_enabled = block.settings.hotspot_1_enabled
-                  assign hotspot_2_enabled = block.settings.hotspot_2_enabled
-                  assign hotspot_3_enabled = block.settings.hotspot_3_enabled
-
-                  assign has_hotspots = false
-                  if hotspot_1_enabled or hotspot_2_enabled or hotspot_3_enabled
-                    assign has_hotspots = true
-                  endif
-                -%}
-
-                {%- if has_hotspots -%}
-                  <div class="shop-the-look__hotspots">
-                    {% render 'component-hotspot',
-                      enabled: hotspot_1_enabled,
-                      product: block.settings.hotspot_1_product,
-                      horizontal: block.settings.hotspot_1_horizontal,
-                      vertical: block.settings.hotspot_1_vertical,
-                      index: 1,
-                      block_id: block.id
-                    %}
-
-                    {% render 'component-hotspot',
-                      enabled: hotspot_2_enabled,
-                      product: block.settings.hotspot_2_product,
-                      horizontal: block.settings.hotspot_2_horizontal,
-                      vertical: block.settings.hotspot_2_vertical,
-                      index: 2,
-                      block_id: block.id
-                    %}
-
-                    {% render 'component-hotspot',
-                      enabled: hotspot_3_enabled,
-                      product: block.settings.hotspot_3_product,
-                      horizontal: block.settings.hotspot_3_horizontal,
-                      vertical: block.settings.hotspot_3_vertical,
-                      index: 3,
-                      block_id: block.id
-                    %}
-                  </div>
-                {%- endif -%}
-              </div>
-            </div>
-          {%- endif -%}
+        {%- comment -%} Output all images directly as grid items {%- endcomment -%}
+        {%- for block in image_blocks -%}
+          <div class="shop-the-look__grid-item" {{ block.shopify_attributes }}>
+            {% render 'component-shop-the-look-image', block: block, section: section %}
+          </div>
         {%- endfor -%}
       </div>
     </div>

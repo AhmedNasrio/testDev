@@ -6,18 +6,19 @@
 
 .shop-the-look__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
+  margin-bottom: 40px;
 }
 
 .shop-the-look__heading {
+  font-family: 'Montserrat';
   margin: 0;
-  font-size: 3.2rem;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 48px;
+  font-weight: 500;
+  /* line-height: 1.2; */
   text-align: center;
+  color: #202123;
 }
 
 .shop-the-look__heading strong {
@@ -30,19 +31,49 @@
   color: rgb(var(--color-foreground));
 }
 
-
-
+.shop-the-look__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* Grid Container */
 .shop-the-look__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 12px;
-  row-gap: 8px;
-  width: 100%;
+  grid-template-columns: repeat(3, 410px);
+  grid-template-rows: repeat(5, auto);
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .shop-the-look__grid-item {
   width: 100%;
+}
+
+/* Grid area assignments for each item */
+.shop-the-look__grid-item:nth-child(1) {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.shop-the-look__grid-item:nth-child(2) {
+  grid-area: 1 / 2 / 4 / 3;
+}
+
+.shop-the-look__grid-item:nth-child(3) {
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.shop-the-look__grid-item:nth-child(4) {
+  grid-area: 3 / 1 / 6 / 2;
+}
+
+.shop-the-look__grid-item:nth-child(5) {
+  grid-area: 4 / 2 / 6 / 3;
+}
+
+.shop-the-look__grid-item:nth-child(6) {
+  grid-area: 3 / 3 / 6 / 4;
 }
 
 @media screen and (max-width: 989px) {
@@ -70,14 +101,18 @@
   background-color: rgb(var(--color-background));
 }
 
-/* Odd items (1st, 3rd, 5th) - Square aspect ratio 1:1 */
-.shop-the-look__grid-item:nth-child(odd) .shop-the-look__image-container {
+/* Items 1, 3, 5 - Square aspect ratio 410x410 (1:1) */
+.shop-the-look__grid-item:nth-child(1) .shop-the-look__image-container,
+.shop-the-look__grid-item:nth-child(3) .shop-the-look__image-container,
+.shop-the-look__grid-item:nth-child(5) .shop-the-look__image-container {
   aspect-ratio: 1 / 1;
 }
 
-/* Even items (2nd, 4th, 6th) - Tall aspect ratio 1:1.5 */
-.shop-the-look__grid-item:nth-child(even) .shop-the-look__image-container {
-  aspect-ratio: 1 / 1.5;
+/* Items 2, 4, 6 - Tall aspect ratio 410x616 */
+.shop-the-look__grid-item:nth-child(2) .shop-the-look__image-container,
+.shop-the-look__grid-item:nth-child(4) .shop-the-look__image-container,
+.shop-the-look__grid-item:nth-child(6) .shop-the-look__image-container {
+  aspect-ratio: 410 / 616;
 }
 
 .shop-the-look__image {
@@ -115,8 +150,8 @@
 }
 
 .shop-the-look__hotspot-trigger {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 32px;
+  height: 32px;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -125,28 +160,17 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  transition: transform 0.2s ease;
 }
 
-.shop-the-look__hotspot-dot {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #FF3A40;
-  border: 2px solid #FFFFFF;
-  z-index: 2;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 0 0 rgba(255, 58, 64, 0.4);
+.shop-the-look__hotspot-trigger svg {
+  display: block;
+  width: 32px;
+  height: 32px;
 }
 
-.shop-the-look__hotspot-pulse {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #FF3A40;
-  opacity: 0.3;
-  animation: hotspot-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.shop-the-look__hotspot-trigger:hover {
+  transform: scale(1.1);
 }
 
 .card-media-no-image {
@@ -154,45 +178,21 @@
   border-radius: 12px;
 }
 
-@keyframes hotspot-pulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.2;
-  }
-
-  50% {
-    transform: scale(1.3);
-    opacity: 0;
-  }
-}
-
-.shop-the-look__hotspot-trigger:hover .shop-the-look__hotspot-dot {
-  transform: scale(1.2);
-}
-
 .shop-the-look__hotspot-trigger:focus {
-  outline: 2px solid rgb(var(--color-foreground));
-  outline-offset: 2px;
+  outline: none;
 }
 
 /* Hotspot active state */
-.shop-the-look__hotspot.is-active .shop-the-look__hotspot-pulse {
-  animation: none;
-  opacity: 0;
-}
-
-.shop-the-look__hotspot.is-active .shop-the-look__hotspot-dot {
-  transform: scale(1.2);
+.shop-the-look__hotspot.is-active .shop-the-look__hotspot-trigger {
+  transform: scale(1.15);
 }
 
 /* Product Popup */
 .shop-the-look__hotspot-popup {
   position: absolute;
-  top: calc(100% + 12px);
+  bottom: calc(100% + 12px);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(8px);
   width: 280px;
   background-color: #FFFFFF;
   border-radius: 12px;
@@ -200,7 +200,6 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  transform: translateX(-50%) translateY(-8px);
   z-index: 10;
   pointer-events: none;
 }
@@ -208,14 +207,14 @@
 .shop-the-look__hotspot-popup::before {
   content: '';
   position: absolute;
-  bottom: 100%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #FFFFFF;
+  border-top: 10px solid #FFFFFF;
 }
 
 .shop-the-look__hotspot.is-active .shop-the-look__hotspot-popup {
@@ -354,25 +353,14 @@
     gap: 1.5rem;
   }
 
-  .shop-the-look__image-container {
-    aspect-ratio: 1;
-    height: 100%;
+  .shop-the-look__hotspot-trigger {
+    width: 28px;
+    height: 28px;
   }
 
-  .shop-the-look__hotspot {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .shop-the-look__hotspot-dot {
-    width: 1.8rem;
-    height: 1.8rem;
-   
-  }
-
-  .shop-the-look__hotspot-pulse {
-    width: 1.4rem;
-    height: 1.4rem;
+  .shop-the-look__hotspot-trigger svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
