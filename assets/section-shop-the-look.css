@@ -190,9 +190,6 @@
 /* Product Popup */
 .shop-the-look__hotspot-popup {
   position: absolute;
-  bottom: calc(100% + 12px);
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
   width: 280px;
   background-color: #FFFFFF;
   border-radius: 12px;
@@ -204,7 +201,14 @@
   pointer-events: none;
 }
 
-.shop-the-look__hotspot-popup::before {
+/* Popup Position: Top (default) */
+.shop-the-look__hotspot-popup--top {
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.shop-the-look__hotspot-popup--top::before {
   content: '';
   position: absolute;
   top: 100%;
@@ -217,10 +221,86 @@
   border-top: 10px solid #FFFFFF;
 }
 
+.shop-the-look__hotspot.is-active .shop-the-look__hotspot-popup--top {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Popup Position: Bottom */
+.shop-the-look__hotspot-popup--bottom {
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+.shop-the-look__hotspot-popup--bottom::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #FFFFFF;
+}
+
+.shop-the-look__hotspot.is-active .shop-the-look__hotspot-popup--bottom {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Popup Position: Right */
+.shop-the-look__hotspot-popup--right {
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+}
+
+.shop-the-look__hotspot-popup--right::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #FFFFFF;
+}
+
+.shop-the-look__hotspot.is-active .shop-the-look__hotspot-popup--right {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Popup Position: Left */
+.shop-the-look__hotspot-popup--left {
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+}
+
+.shop-the-look__hotspot-popup--left::before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #FFFFFF;
+}
+
+.shop-the-look__hotspot.is-active .shop-the-look__hotspot-popup--left {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Active state for all positions */
 .shop-the-look__hotspot.is-active .shop-the-look__hotspot-popup {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
 

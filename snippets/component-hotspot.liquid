@@ -6,6 +6,7 @@
   - product: {Object} Product Liquid object
   - horizontal: {Number} Horizontal position percentage (0-100)
   - vertical: {Number} Vertical position percentage (0-100)
+  - popup_position: {String} Popup position: 'top', 'right', 'bottom', or 'left' (default: 'top')
   - index: {Number} Hotspot index number
   - block_id: {String} Block ID for unique popup ID
 
@@ -15,6 +16,7 @@
     product: block.settings.hotspot_1_product,
     horizontal: block.settings.hotspot_1_horizontal,
     vertical: block.settings.hotspot_1_vertical,
+    popup_position: block.settings.hotspot_1_popup_position,
     index: 1,
     block_id: block.id
   %}
@@ -43,9 +45,10 @@
       </svg>
     </button>
     <div 
-      class="shop-the-look__hotspot-popup" 
+      class="shop-the-look__hotspot-popup shop-the-look__hotspot-popup--{{ popup_position | default: 'top' }}" 
       id="hotspot-{{ block_id }}-{{ index }}"
       data-product-url="{{ product.url }}"
+      data-position="{{ popup_position | default: 'top' }}"
     >
       <div class="shop-the-look__hotspot-popup-content">
         {%- if product.featured_image != blank -%}
