@@ -86,9 +86,36 @@
 
 @media screen and (max-width: 749px) {
   .shop-the-look__grid {
-    grid-template-columns: 1fr;
-    column-gap: 0;
-    row-gap: 8px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-left: 10px;
+  }
+
+  .shop-the-look__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shop-the-look__grid-item {
+    flex-shrink: 0;
+    width: 250px;
+    grid-area: unset !important;
+  }
+
+  .shop-the-look__grid-item:nth-child(1) .shop-the-look__image-container,
+  .shop-the-look__grid-item:nth-child(2) .shop-the-look__image-container,
+  .shop-the-look__grid-item:nth-child(3) .shop-the-look__image-container,
+  .shop-the-look__grid-item:nth-child(4) .shop-the-look__image-container,
+  .shop-the-look__grid-item:nth-child(5) .shop-the-look__image-container,
+  .shop-the-look__grid-item:nth-child(6) .shop-the-look__image-container {
+    aspect-ratio: 1 / 1 !important;
   }
 }
 
@@ -190,7 +217,7 @@
 /* Product Popup */
 .shop-the-look__hotspot-popup {
   position: absolute;
-  width: 280px;
+  width: 282px;
   background-color: #FFFFFF;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -346,9 +373,14 @@
 
 .shop-the-look__hotspot-popup-price {
   font-family: 'Montserrat';
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: #202123;
+}
+
+.shop-the-look__hotspot-popup-price .price,
+.shop-the-look__hotspot-popup-price .price-item {
+  font-size: 16px;
 }
 
 .shop-the-look__hotspot-popup-arrow {
@@ -366,33 +398,39 @@
   transform: translateX(4px);
 }
 
-.shop-the-look__hotspot-popup-arrow svg {
-  width: 100%;
-  height: 100%;
-}
 
 /* Responsive popup positioning */
 @media screen and (max-width: 749px) {
   .shop-the-look__hotspot-popup {
-    width: 240px;
+    width: 174px;
+    height: 65px;
   }
 
   .shop-the-look__hotspot-popup-content {
-    padding: 12px;
+    padding: 8px;
     gap: 10px;
   }
 
   .shop-the-look__hotspot-popup-image {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 48px;
+  }
+  .price-item .price-item--regular{
+    font-size: 14px;
+  }
+  .shop-the-look__hotspot-popup-arrow svg{
+    width: 6px;
+    height: 11px;
   }
 
   .shop-the-look__hotspot-popup-title {
-    font-size: 13px;
+    font-size: 14px;
   }
 
-  .shop-the-look__hotspot-popup-price {
-    font-size: 13px;
+  .shop-the-look__hotspot-popup-price,
+  .shop-the-look__hotspot-popup-price .price,
+  .shop-the-look__hotspot-popup-price .price-item {
+    font-size: 14px;
   }
 }
 

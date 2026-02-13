@@ -65,11 +65,20 @@
         <div class="shop-the-look__hotspot-popup-info">
           <h3 class="shop-the-look__hotspot-popup-title">{{ product.title | escape }}</h3>
           <div class="shop-the-look__hotspot-popup-price">
-            {% render 'component-product-price', product: product, show_compare_at_price: false %}
+            {% render 'component-product-price', product: product, show_compare_at_price: false, hide_currency: true %}
           </div>
         </div>
         <a href="{{ product.url }}" class="shop-the-look__hotspot-popup-arrow" aria-label="View {{ product.title | escape }}">
-          {{ 'icon-arrow-next.svg' | inline_asset_content }}
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.81501 6.55789C8.06166 6.80208 8.06166 7.19791 7.81501 7.4421L1.37589 13.8169C1.12924 14.061 0.729406 14.061 0.482755 13.8169L0.184989 13.5221C-0.0616628 13.2779 -0.0616628 12.882 0.184989 12.6379L5.87978 7L0.184989 1.36213C-0.0616628 1.11795 -0.0616628 0.722115 0.184989 0.477929L0.482755 0.183139C0.729406 -0.0610466 1.12924 -0.0610466 1.37589 0.183139L7.81501 6.55789Z" fill="url(#paint0_linear_268_897)"/>
+            <defs>
+            <linearGradient id="paint0_linear_268_897" x1="4" y1="0" x2="4" y2="14" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#202123"/>
+            <stop offset="1" stop-color="#4A4A4A"/>
+            </linearGradient>
+            </defs>
+            </svg>
+            
         </a>
       </div>
     </div>
