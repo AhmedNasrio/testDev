@@ -214,6 +214,153 @@
         "padding_bottom": 80
       }
     },
+    "shop_the_look_V4dmwn": {
+      "type": "shop-the-look",
+      "blocks": {
+        "image_CKzpeh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/868955301e87e698b7ef46da00277dca82b8e118.jpg",
+            "hotspot_1_enabled": true,
+            "hotspot_1_product": "dark-denim-top",
+            "hotspot_1_horizontal": 59,
+            "hotspot_1_vertical": 18,
+            "hotspot_1_popup_position": "bottom",
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_2_popup_position": "top",
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
+          }
+        },
+        "image_k4abij": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/9c4bb1f55f8845864a58e905957ad85e7ae29629.png",
+            "hotspot_1_enabled": true,
+            "hotspot_1_product": "ocean-bottle-17-oz",
+            "hotspot_1_horizontal": 54,
+            "hotspot_1_vertical": 40,
+            "hotspot_1_popup_position": "top",
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_2_popup_position": "top",
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
+          }
+        },
+        "image_YBKKwi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/f79047ebe86180137cfa87fe1fcdb6ef2e1b15da.png",
+            "hotspot_1_enabled": true,
+            "hotspot_1_product": "blue-silk-tuxedo",
+            "hotspot_1_horizontal": 40,
+            "hotspot_1_vertical": 40,
+            "hotspot_1_popup_position": "top",
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_2_popup_position": "top",
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
+          }
+        },
+        "image_hkBpMX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ba3fa85467609bd241b37af6fb2b8cc19edee7d3.png",
+            "hotspot_1_enabled": true,
+            "hotspot_1_product": "burton-dunmore-jacket-2016",
+            "hotspot_1_horizontal": 35,
+            "hotspot_1_vertical": 30,
+            "hotspot_1_popup_position": "top",
+            "hotspot_2_enabled": true,
+            "hotspot_2_product": "roxy-andie-jacket-201-womens",
+            "hotspot_2_horizontal": 63,
+            "hotspot_2_vertical": 54,
+            "hotspot_2_popup_position": "top",
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
+          }
+        },
+        "image_78BjhM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/e75aea102b01c1e07b81eba88db850ec8775f111.png",
+            "hotspot_1_enabled": true,
+            "hotspot_1_product": "red-sports-tee",
+            "hotspot_1_horizontal": 54,
+            "hotspot_1_vertical": 59,
+            "hotspot_1_popup_position": "top",
+            "hotspot_2_enabled": false,
+            "hotspot_2_product": "",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 50,
+            "hotspot_2_popup_position": "top",
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
+          }
+        },
+        "image_Cw3rt7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/7f3181c6d675e27ca8bcf3edbaac0a75d5e90bbf.png",
+            "hotspot_1_enabled": true,
+            "hotspot_1_product": "dark-denim-top",
+            "hotspot_1_horizontal": 61,
+            "hotspot_1_vertical": 30,
+            "hotspot_1_popup_position": "top",
+            "hotspot_2_enabled": true,
+            "hotspot_2_product": "o-t-shirt",
+            "hotspot_2_horizontal": 50,
+            "hotspot_2_vertical": 88,
+            "hotspot_2_popup_position": "top",
+            "hotspot_3_enabled": false,
+            "hotspot_3_product": "",
+            "hotspot_3_horizontal": 70,
+            "hotspot_3_vertical": 40,
+            "hotspot_3_popup_position": "top"
+          }
+        }
+      },
+      "block_order": [
+        "image_CKzpeh",
+        "image_k4abij",
+        "image_YBKKwi",
+        "image_hkBpMX",
+        "image_78BjhM",
+        "image_Cw3rt7"
+      ],
+      "name": "Shop The Look",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "heading": "Merch that brings your brand to life",
+        "show_vendor": false
+      }
+    },
     "brand_showcase_6QbbPn": {
       "type": "brand-showcase",
       "blocks": {
@@ -396,509 +543,6 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "hero_v2_pVryft": {
-      "type": "hero-v2",
-      "blocks": {
-        "collection_GVMfYr": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": "",
-            "content_position": "top"
-          }
-        },
-        "collection_rkQKDL": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "custom_title": "",
-            "content_position": "top"
-          }
-        }
-      },
-      "block_order": [
-        "collection_GVMfYr",
-        "collection_rkQKDL"
-      ],
-      "name": "Hero V2",
-      "settings": {
-        "color_scheme": "",
-        "background_type": "image",
-        "video_background_url": "",
-        "heading": "Main Banner Title Here",
-        "description": "Sub Header Here",
-        "button_text": "SHOP COLLECTION",
-        "button_link": "",
-        "button_type": "button",
-        "content_alignment": "left",
-        "vertical_alignment": "top",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "featured_collections_hhETJ9": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_card_3ccame": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_card_BRp9XN": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_card_jbyADA": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_card_LVn8DN": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "collection_card_nCgcp7": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_card_3ccame",
-        "collection_card_BRp9XN",
-        "collection_card_jbyADA",
-        "collection_card_LVn8DN",
-        "collection_card_nCgcp7"
-      ],
-      "name": "Featured Collections",
-      "settings": {
-        "color_scheme": "",
-        "heading": "Find the perfect fit for your game",
-        "subheading": "Browse through our collections",
-        "heading_alignment": "center",
-        "style": "style2",
-        "grid_gap": 25,
-        "hide_shop_now": true
-      }
-    },
-    "featured_products_example": {
-      "type": "featured-products",
-      "blocks": {
-        "block_1": {
-          "type": "product_card",
-          "settings": {
-            "product": "scotland-button-up-in-navy"
-          }
-        },
-        "block_2": {
-          "type": "product_card",
-          "settings": {
-            "product": "cape-dress-1"
-          }
-        },
-        "product_card_bpd4Xd": {
-          "type": "product_card",
-          "settings": {
-            "product": "3-4-sleeve-kimono-dress-coral"
-          }
-        },
-        "product_card_tP6QmJ": {
-          "type": "product_card",
-          "settings": {
-            "product": "alex-twill-pant-sand"
-          }
-        },
-        "product_card_RUFfmj": {
-          "type": "product_card",
-          "settings": {
-            "product": ""
-          }
-        },
-        "product_card_QizrFh": {
-          "type": "product_card",
-          "settings": {
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "block_1",
-        "block_2",
-        "product_card_bpd4Xd",
-        "product_card_tP6QmJ",
-        "product_card_RUFfmj",
-        "product_card_QizrFh"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "heading": "Best Sellers",
-        "subheading": "",
-        "view_all_text": "View All",
-        "view_all_url": "shopify://products/acb-top-in-chipped-brick",
-        "heading_alignment": "center",
-        "show_view_all_as_button": true,
-        "button_background_color": "#2e2e2e",
-        "button_text_color": "#ffffff",
-        "product_content_alignment": "center",
-        "review_content_alignment": "center"
-      }
-    },
-    "selling_points_example": {
-      "type": "selling-points",
-      "blocks": {
-        "selling_point_1": {
-          "type": "selling_point",
-          "settings": {
-            "title": "Selling Point Title",
-            "description": "Selling Point Description"
-          }
-        },
-        "selling_point_2": {
-          "type": "selling_point",
-          "settings": {
-            "title": "Selling Point Title",
-            "description": "Selling Point Description"
-          }
-        },
-        "selling_point_3": {
-          "type": "selling_point",
-          "settings": {
-            "title": "Selling Point Title",
-            "description": "Selling Point Description"
-          }
-        },
-        "selling_point_4": {
-          "type": "selling_point",
-          "settings": {
-            "title": "Selling Point Title",
-            "description": "Selling Point Description"
-          }
-        }
-      },
-      "block_order": [
-        "selling_point_1",
-        "selling_point_2",
-        "selling_point_3",
-        "selling_point_4"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "icon_size": 60
-      }
-    },
-    "selling_points_v2_6NgzaK": {
-      "type": "selling-points-v2",
-      "blocks": {
-        "selling_point_FiGVm7": {
-          "type": "selling_point",
-          "settings": {
-            "title": "15% OFF FIRST ORDER",
-            "description": "Subscribe to our mailing list for 15% off your first order",
-            "link_url": "shopify://collections/spring"
-          }
-        },
-        "selling_point_LKeBYR": {
-          "type": "selling_point",
-          "settings": {
-            "title": "INSTANT REFUNDS & EXCHANGES",
-            "description": "Get your new items or refund sent out straight away on UK & EU orders",
-            "link_url": "shopify://collections/luxury-pret"
-          }
-        },
-        "selling_point_YAEXV8": {
-          "type": "selling_point",
-          "settings": {
-            "title": "FREE WORLDWIDE DELIVERY",
-            "description": "Free worldwide delivery on all orders over £70",
-            "link_url": ""
-          }
-        },
-        "selling_point_Y6iWMM": {
-          "type": "selling_point",
-          "settings": {
-            "title": "45 DAY RETURNS",
-            "description": "We now offer an extended\nreturns policy for\ninternational customers",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "selling_point_FiGVm7",
-        "selling_point_LKeBYR",
-        "selling_point_YAEXV8",
-        "selling_point_Y6iWMM"
-      ],
-      "name": "Selling Points V2",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "enable_mobile_slider": true
-      }
-    },
-    "logos_example": {
-      "type": "logos",
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_5": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_6": {
-          "type": "logo",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4",
-        "logo_5",
-        "logo_6"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "animation_duration": 30,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "logo_height": 120
-      }
-    },
-    "promo_banner_example": {
-      "type": "promo-banner",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "heading": "Special Offer",
-        "subheading": "Discover our amazing products and exclusive deals",
-        "button_text": "SHOP NOW",
-        "button_url": "",
-        "image_placement": "row",
-        "image_height": 500,
-        "image_fit": "cover",
-        "image_position": "top",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "brand_story_QhMEEy": {
-      "type": "brand-story",
-      "name": "Brand Story",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "label_1": "OTHER BRANDS",
-        "label_2": "DEMO",
-        "heading": "Heading",
-        "description": "Description content will appear here."
-      }
-    },
-    "shop_the_look_V4dmwn": {
-      "type": "shop-the-look",
-      "blocks": {
-        "image_CKzpeh": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/868955301e87e698b7ef46da00277dca82b8e118.jpg",
-            "hotspot_1_enabled": true,
-            "hotspot_1_product": "dark-denim-top",
-            "hotspot_1_horizontal": 59,
-            "hotspot_1_vertical": 18,
-            "hotspot_1_popup_position": "bottom",
-            "hotspot_2_enabled": false,
-            "hotspot_2_product": "",
-            "hotspot_2_horizontal": 50,
-            "hotspot_2_vertical": 50,
-            "hotspot_2_popup_position": "top",
-            "hotspot_3_enabled": false,
-            "hotspot_3_product": "",
-            "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40,
-            "hotspot_3_popup_position": "top"
-          }
-        },
-        "image_k4abij": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/9c4bb1f55f8845864a58e905957ad85e7ae29629.png",
-            "hotspot_1_enabled": true,
-            "hotspot_1_product": "ocean-bottle-17-oz",
-            "hotspot_1_horizontal": 54,
-            "hotspot_1_vertical": 40,
-            "hotspot_1_popup_position": "top",
-            "hotspot_2_enabled": false,
-            "hotspot_2_product": "",
-            "hotspot_2_horizontal": 50,
-            "hotspot_2_vertical": 50,
-            "hotspot_2_popup_position": "top",
-            "hotspot_3_enabled": false,
-            "hotspot_3_product": "",
-            "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40,
-            "hotspot_3_popup_position": "top"
-          }
-        },
-        "image_YBKKwi": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/f79047ebe86180137cfa87fe1fcdb6ef2e1b15da.png",
-            "hotspot_1_enabled": true,
-            "hotspot_1_product": "blue-silk-tuxedo",
-            "hotspot_1_horizontal": 40,
-            "hotspot_1_vertical": 40,
-            "hotspot_1_popup_position": "top",
-            "hotspot_2_enabled": false,
-            "hotspot_2_product": "",
-            "hotspot_2_horizontal": 50,
-            "hotspot_2_vertical": 50,
-            "hotspot_2_popup_position": "top",
-            "hotspot_3_enabled": false,
-            "hotspot_3_product": "",
-            "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40,
-            "hotspot_3_popup_position": "top"
-          }
-        },
-        "image_hkBpMX": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ba3fa85467609bd241b37af6fb2b8cc19edee7d3.png",
-            "hotspot_1_enabled": true,
-            "hotspot_1_product": "burton-dunmore-jacket-2016",
-            "hotspot_1_horizontal": 35,
-            "hotspot_1_vertical": 30,
-            "hotspot_1_popup_position": "top",
-            "hotspot_2_enabled": true,
-            "hotspot_2_product": "roxy-andie-jacket-201-womens",
-            "hotspot_2_horizontal": 63,
-            "hotspot_2_vertical": 54,
-            "hotspot_2_popup_position": "top",
-            "hotspot_3_enabled": false,
-            "hotspot_3_product": "",
-            "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40,
-            "hotspot_3_popup_position": "top"
-          }
-        },
-        "image_78BjhM": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/e75aea102b01c1e07b81eba88db850ec8775f111.png",
-            "hotspot_1_enabled": true,
-            "hotspot_1_product": "red-sports-tee",
-            "hotspot_1_horizontal": 54,
-            "hotspot_1_vertical": 59,
-            "hotspot_1_popup_position": "top",
-            "hotspot_2_enabled": false,
-            "hotspot_2_product": "",
-            "hotspot_2_horizontal": 50,
-            "hotspot_2_vertical": 50,
-            "hotspot_2_popup_position": "top",
-            "hotspot_3_enabled": false,
-            "hotspot_3_product": "",
-            "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40,
-            "hotspot_3_popup_position": "top"
-          }
-        },
-        "image_Cw3rt7": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/7f3181c6d675e27ca8bcf3edbaac0a75d5e90bbf.png",
-            "hotspot_1_enabled": true,
-            "hotspot_1_product": "dark-denim-top",
-            "hotspot_1_horizontal": 61,
-            "hotspot_1_vertical": 30,
-            "hotspot_1_popup_position": "top",
-            "hotspot_2_enabled": true,
-            "hotspot_2_product": "o-t-shirt",
-            "hotspot_2_horizontal": 50,
-            "hotspot_2_vertical": 88,
-            "hotspot_2_popup_position": "top",
-            "hotspot_3_enabled": false,
-            "hotspot_3_product": "",
-            "hotspot_3_horizontal": 70,
-            "hotspot_3_vertical": 40,
-            "hotspot_3_popup_position": "top"
-          }
-        }
-      },
-      "block_order": [
-        "image_CKzpeh",
-        "image_k4abij",
-        "image_YBKKwi",
-        "image_hkBpMX",
-        "image_78BjhM",
-        "image_Cw3rt7"
-      ],
-      "name": "Shop The Look",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "heading": "Merch that brings your brand to life",
-        "show_vendor": false
-      }
-    },
-    "product_details_xbXmpy": {
-      "type": "product-details",
-      "blocks": {
-        "detail_CH7eB8": {
-          "type": "detail",
-          "settings": {
-            "title": "Fit & Features",
-            "content": "<p>Add key product information here, such as fit, materials, or care instructions.</p>"
-          }
-        },
-        "detail_hFtM3H": {
-          "type": "detail",
-          "settings": {
-            "title": "Fabric & Care",
-            "content": "<p>Add key product information here, such as fit, materials, or care instructions.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "detail_CH7eB8",
-        "detail_hFtM3H"
-      ],
-      "name": "Product Details",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
     }
   },
   "order": [
@@ -907,19 +551,10 @@
     "promo_banner_ykRMai",
     "shop_categories_43RftD",
     "product_highlights_gUaG6E",
+    "shop_the_look_V4dmwn",
     "brand_showcase_6QbbPn",
     "blogs_6DGtRD",
     "faq_P8dYUr",
-    "shop_by_category_example",
-    "hero_v2_pVryft",
-    "featured_collections_hhETJ9",
-    "featured_products_example",
-    "selling_points_example",
-    "selling_points_v2_6NgzaK",
-    "logos_example",
-    "promo_banner_example",
-    "brand_story_QhMEEy",
-    "shop_the_look_V4dmwn",
-    "product_details_xbXmpy"
+    "shop_by_category_example"
   ]
 }
