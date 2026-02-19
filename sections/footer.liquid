@@ -38,38 +38,22 @@
     {%- unless only_empty_brand -%}
       <div class="footer__content-top page-width">
         <div class="footer__blocks-wrapper">
-          {%- for block in section.blocks -%}
-            <div class="footer-block grid__item" {{ block.shopify_attributes }}>
-              {%- case block.type -%}
-                {%- when 'text' -%}
-                  <h2 class="footer-block__heading">{{ block.settings.heading }}</h2>
-                  <div class="footer-block__details-content">{{ block.settings.subtext }}</div>
-                {%- when 'link_list' -%}
-                  {%- if block.settings.menu != blank -%}
-                    <h2 class="footer-block__heading">{{ block.settings.heading }}</h2>
-                    <ul class="footer-block__details-content">
-                      {%- for link in block.settings.menu.links -%}
-                        <li>
-                          <a
-                            href="{{ link.url }}"
-                            class="list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
-                          >
-                            {{- link.title | escape -}}
-                          </a>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  {%- endif -%}
-                {%- when 'social_icons' -%}
-                  <h2 class="footer-block__heading">Follow Us</h2>
-                  <div class="footer-block__details-content footer-block-social-icons">
-                    {%- render 'component-social-icons', class: 'footer__list-social' -%}
-                  </div>
-                {%- when 'brand_information' -%}
-                  <div class="footer-block__brand-info" {{ block.shopify_attributes }}>
+          {%- liquid
+            assign brand_block = null
+            assign other_blocks = section.blocks | where: 'type', 'brand_information'
+            if other_blocks.size > 0
+              assign brand_block = other_blocks.first
+            endif
+          -%}
+          
+          {%- comment -%} Left side: Brand Information {%- endcomment -%}
+          <div class="footer__blocks-left">
+            {%- if brand_block != null -%}
+              <div class="footer-block grid__item" {{ brand_block.shopify_attributes }}>
+                <div class="footer-block__brand-info">
                     {%- liquid
-                      assign brand_logo = block.settings.logo_image | default: settings.brand_image
-                      assign brand_description = block.settings.description | default: settings.brand_description
+                      assign brand_logo = brand_block.settings.logo_image | default: settings.brand_image
+                      assign brand_description = brand_block.settings.description | default: settings.brand_description
                     -%}
                     {%- if brand_logo != blank -%}
                       <div class="footer-block__brand-logo">
@@ -88,7 +72,7 @@
                     {%- if brand_description != blank -%}
                       <div class="footer-block__brand-description">{{ brand_description }}</div>
                     {%- endif -%}
-                    {%- if block.settings.show_newsletter -%}
+                    {%- if brand_block.settings.show_newsletter -%}
                       <div class="footer-block__brand-newsletter">
                         {%- form 'customer', class: 'footer-brand-newsletter-form' -%}
                           <input type="hidden" name="contact[tags]" value="newsletter">
@@ -99,12 +83,12 @@
                               class="footer-brand-newsletter__input"
                               value="{{ form.email }}"
                               autocomplete="email"
-                              placeholder="{{ block.settings.newsletter_placeholder | default: 'Enter your email' }}"
-                              aria-label="{{ block.settings.newsletter_placeholder | default: 'Enter your email' }}"
+                              placeholder="{{ brand_block.settings.newsletter_placeholder | default: 'Enter your email' }}"
+                              aria-label="{{ brand_block.settings.newsletter_placeholder | default: 'Enter your email' }}"
                               required
                             >
                             <button type="submit" class="footer-brand-newsletter__button" name="commit">
-                              {{ block.settings.newsletter_button_text | default: 'Subscribe' }}
+                              {{ brand_block.settings.newsletter_button_text | default: 'Subscribe' }}
                             </button>
                           </div>
                           {%- if form.posted_successfully? -%}
@@ -120,7 +104,7 @@
                         {%- endform -%}
                       </div>
                     {%- endif -%}
-                    {%- if block.settings.show_social -%}
+                    {%- if brand_block.settings.show_social -%}
                       <div class="footer-block__brand-social">
                         <ul class="list-unstyled list-social footer__list-social" role="list">
                           {%- if settings.social_facebook_link != blank -%}
@@ -173,10 +157,46 @@
                         </ul>
                       </div>
                     {%- endif -%}
-                  </div>
-              {%- endcase -%}
-            </div>
-          {%- endfor -%}
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+
+          {%- comment -%} Right side: Other Footer Blocks (menus) {%- endcomment -%}
+          <div class="footer__blocks-right">
+            {%- for block in section.blocks -%}
+              {%- unless block.type == 'brand_information' -%}
+                <div class="footer-block grid__item" {{ block.shopify_attributes }}>
+                  {%- case block.type -%}
+                    {%- when 'text' -%}
+                      <h2 class="footer-block__heading">{{ block.settings.heading }}</h2>
+                      <div class="footer-block__details-content">{{ block.settings.subtext }}</div>
+                    {%- when 'link_list' -%}
+                      {%- if block.settings.menu != blank -%}
+                        <h2 class="footer-block__heading">{{ block.settings.heading }}</h2>
+                        <ul class="footer-block__details-content">
+                          {%- for link in block.settings.menu.links -%}
+                            <li>
+                              <a
+                                href="{{ link.url }}"
+                                class="list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                              >
+                                {{- link.title | escape -}}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    {%- when 'social_icons' -%}
+                      <h2 class="footer-block__heading">Follow Us</h2>
+                      <div class="footer-block__details-content footer-block-social-icons">
+                        {%- render 'component-social-icons', class: 'footer__list-social' -%}
+                      </div>
+                  {%- endcase -%}
+                </div>
+              {%- endunless -%}
+            {%- endfor -%}
+          </div>
         </div>
       </div>
     {%- endunless -%}
@@ -212,23 +232,57 @@
     </div>
     <div class="footer__content-bottom-wrapper{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright">
-        <small class="copyright__content" >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }} - {{ powered_by_link }} </small>
-        {%- if section.settings.show_policy -%}
-          <ul class="policies">
-            {%- for policy in shop.policies -%}
-              {%- if policy != blank -%}
-                <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
-                  >
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
+        <small class="copyright__content">
+          {{ section.settings.copyright_text | default: '© 2025 All rights reserved' }}
+        </small>
+      </div>
+      <div class="footer__links">
+        <ul class="footer__links-list">
+          {%- if section.settings.link_1_text != blank -%}
+            <li>
+              <a href="{{ section.settings.link_1_url | default: '#' }}" class="footer__link">
+                {{ section.settings.link_1_text }}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.link_2_text != blank -%}
+            <li>
+              <a href="{{ section.settings.link_2_url | default: '#' }}" class="footer__link">
+                {{ section.settings.link_2_text }}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.link_3_text != blank -%}
+            <li>
+              <a href="{{ section.settings.link_3_url | default: '#' }}" class="footer__link">
+                {{ section.settings.link_3_text }}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.link_4_text != blank -%}
+            <li>
+              <a href="{{ section.settings.link_4_url | default: '#' }}" class="footer__link">
+                {{ section.settings.link_4_text }}
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
       </div>
     </div>
   </div>
+  {%- if section.settings.background_image != blank -%}
+    <div class="footer__background-image" style="width: {{ section.settings.background_image_width }}px;">
+      {{
+        section.settings.background_image
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'lazy',
+          widths: '100, 200, 300, 400, 500, 600, 800, 1000, 1200',
+          width: section.settings.background_image_width,
+          alt: 'Footer background'
+      }}
+    </div>
+  {%- endif -%}
 </footer>
 
 {% schema %}
@@ -390,6 +444,84 @@
       "id": "show_policy",
       "default": true,
       "label": "t:sections.footer.settings.show_policy.label"
+    },
+    {
+      "type": "header",
+      "content": "Footer Bottom"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "© 2025 All rights reserved"
+    },
+    {
+      "type": "header",
+      "content": "Footer Links"
+    },
+    {
+      "type": "text",
+      "id": "link_1_text",
+      "label": "Link 1 - Text",
+      "default": "Accessibility"
+    },
+    {
+      "type": "url",
+      "id": "link_1_url",
+      "label": "Link 1 - URL"
+    },
+    {
+      "type": "text",
+      "id": "link_2_text",
+      "label": "Link 2 - Text",
+      "default": "Terms of Service"
+    },
+    {
+      "type": "url",
+      "id": "link_2_url",
+      "label": "Link 2 - URL"
+    },
+    {
+      "type": "text",
+      "id": "link_3_text",
+      "label": "Link 3 - Text",
+      "default": "Privacy Policy"
+    },
+    {
+      "type": "url",
+      "id": "link_3_url",
+      "label": "Link 3 - URL"
+    },
+    {
+      "type": "text",
+      "id": "link_4_text",
+      "label": "Link 4 - Text",
+      "default": "Cookie Preferences"
+    },
+    {
+      "type": "url",
+      "id": "link_4_url",
+      "label": "Link 4 - URL"
+    },
+    {
+      "type": "header",
+      "content": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "info": "Displayed at the bottom right of the footer"
+    },
+    {
+      "type": "range",
+      "id": "background_image_width",
+      "min": 100,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "label": "Background image width",
+      "default": 300
     },
     {
       "type": "header",
