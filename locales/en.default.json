@@ -200,6 +200,9 @@
     "discount": "Discount",
     "discount_applied": "Discount applied"
   },
+  "newsletter": {
+    "success": "Thanks for subscribing!"
+  },
   "general": {
     "continue_shopping": "Continue shopping",
     "splash_screen": {

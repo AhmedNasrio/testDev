@@ -215,11 +215,125 @@ li.list-social__item a {
   text-align: left;
 }
 
+/* Brand block: logo 215×50 */
+.footer-block__brand-logo {
+  margin-bottom: 1.5rem;
+  line-height: 0;
+}
+
+.footer-block__brand-logo img {
+  width: 215px;
+  height: 50px;
+  object-fit: contain;
+  object-position: left top;
+}
+
+.footer-block__brand-description {
+  margin-bottom: 1.5rem;
+}
+
+.footer-block__brand-description p {
+  margin: 0 0 0.5rem;
+}
+
+.footer-block__brand-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Brand newsletter: white bg, input + button inside */
+.footer-block__brand-newsletter {
+  margin-bottom: 2rem;
+}
+
+.footer-brand-newsletter-form {
+  width: 100%;
+  max-width: 100%;
+}
+
+.footer-brand-newsletter__input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 4px;
+  gap: 4px;
+}
+
+.footer-brand-newsletter__input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  color: #000000;
+}
+
+.footer-brand-newsletter__input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-brand-newsletter__input:focus {
+  outline: none;
+}
+
+.footer-brand-newsletter__button {
+  flex-shrink: 0;
+  padding: 10px 24px;
+  border: none;
+  background-color: #FF3A40;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease;
+}
+
+.footer-brand-newsletter__button:hover {
+  background-color: #e6333a;
+}
+
+.footer-brand-newsletter__message {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.footer-brand-newsletter__message.form__message--error {
+  color: #FF3A40;
+}
+
+.footer-block__brand-social {
+  margin-top: 2rem;
+}
+
+.footer-block__brand-social .list-social {
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 749px) {
+  .footer-brand-newsletter__input {
+    font-size: 1.3rem;
+    padding: 8px 12px;
+  }
+
+  .footer-brand-newsletter__button {
+    padding: 8px 20px;
+    font-size: 1.2rem;
+  }
+}
+
 .footer-block:only-child .footer-block__brand-info {
   text-align: center;
 }
 
-.footer-block:only-child > .footer-block__brand-info > .footer-block__image-wrapper {
+.footer-block:only-child > .footer-block__brand-info > .footer-block__image-wrapper,
+.footer-block:only-child > .footer-block__brand-info > .footer-block__brand-logo {
   margin-left: auto;
   margin-right: auto;
 }
@@ -397,7 +511,7 @@ li.list-social__item a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0;/
+  padding: 0;
 }
 
 .list-payment__item {
