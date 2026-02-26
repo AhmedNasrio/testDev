@@ -35,8 +35,8 @@
 }
 
 .footer__content-top {
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 60px;
+  /* padding-bottom: 40px; */
   display: block;
   position: relative;
   z-index: 1;
@@ -633,7 +633,7 @@ li.list-social__item a {
   display: flex;
   justify-content: space-between;
   flex: 1;
-  gap: 160px;
+  /* gap: 160px; */
 }
 
 .footer-block-social-icons {
@@ -982,9 +982,6 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
     gap: 110px;
   }
 
-  .footer__blocks-right {
-    gap: 48px;
-  }
 
   .footer__payment-row {
     margin-top: 28px;
@@ -993,7 +990,7 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
   .footer-block {
     width: 100%;
     max-width: none;
-    flex: 1 1 25%;
+    /* flex: 1 1 25%; */
   }
 }
 

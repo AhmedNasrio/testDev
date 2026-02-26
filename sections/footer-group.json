@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "type": "footer",
   "name": "t:general.footer",
   "sections": {
@@ -17,36 +17,42 @@
         "link_list_xdP99L": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "Shop",
+            "menu": "shop"
           }
         },
         "link_list_kkNmcT": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "About",
+            "menu": "about"
+          }
+        },
+        "link_list_fCxf4p": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Explore",
+            "menu": "explore"
           }
         },
         "brand_information_pLUCGY": {
           "type": "brand_information",
           "settings": {
+            "logo_image": "shopify://shop_images/Boundless_Logo.png",
+            "headline": "",
+            "description": "<p>Be the first to know about the latest brands, products, and new launches.</p>",
+            "show_newsletter": true,
+            "newsletter_placeholder": "Enter your email",
+            "newsletter_button_text": "Subscribe",
             "show_social": true
-          }
-        },
-        "text_3D9g6x": {
-          "type": "text",
-          "settings": {
-            "heading": "Provide 3 distinct proposals in JSON form indexed by keys.",
-            "subtext": "<p>Upgrade Your Kitchen Game with Cookware Fit for Experts</p>"
           }
         }
       },
       "block_order": [
         "link_list_xdP99L",
         "link_list_kkNmcT",
-        "brand_information_pLUCGY",
-        "text_3D9g6x"
+        "link_list_fCxf4p",
+        "brand_information_pLUCGY"
       ],
       "settings": {
         "color_scheme": "scheme-4",
@@ -54,6 +60,17 @@
         "enable_language_selector": true,
         "payment_enable": true,
         "show_policy": true,
+        "copyright_text": "© 2025 All rights reserved",
+        "link_1_text": "Accessibility",
+        "link_1_url": "",
+        "link_2_text": "Terms of Service",
+        "link_2_url": "",
+        "link_3_text": "Privacy Policy",
+        "link_3_url": "",
+        "link_4_text": "Cookie Preferences",
+        "link_4_url": "",
+        "background_image": "shopify://shop_images/Group_3.png",
+        "background_image_width": 280,
         "margin_top": 60
       }
     }
